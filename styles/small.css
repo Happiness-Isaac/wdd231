@@ -1,0 +1,260 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-font: 'Josefin Sans';
+    --primary-font: 'Lato';
+    --secondary-font: 'Pacifico';
+    --main-color: #1d2d44;
+    --primary-color: #3e5c76;
+    --secondary-color: #748cab;
+    --tertiary-color: #f0ebd8;
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    background-color: #1d2d44;
+}
+
+.intro img {
+    border-radius: 50%;
+    width: 125px;
+    height: auto;
+    padding: 10px 0;
+    margin-left: 100px;
+}
+
+.intro h1 {
+    color: #f0ebd8;
+    margin-left: 100px;
+    font-size: 2rem;
+    font-family: var(--primary-font);
+    letter-spacing: .2rem;
+    font-weight: 400;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--primary-color);
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-family: var(--secondary-font);
+    letter-spacing: .2rem;
+    padding: 1rem;
+    display: block;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+nav a:hover {
+    background-color: var(--secondary-color);
+}
+
+#hamButton {
+    display: none;
+}
+
+.selected {
+    background-color: var(--tertiary-color);
+    color: var(--main-color);
+}
+
+main>h1 {
+    font-family: var(--primary-font);
+    color: var(--main-color);
+    padding: 0 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.section {
+    border: 1px solid #1d2d44;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+.section h2 {
+    background-color: var(--secondary-color);
+    padding: 7px;
+    text-align: center;
+    font-family: var(--main-font);
+    width: 100%;
+}
+
+.one li {
+    list-style-position: inside;
+    margin: 40px;
+}
+
+.two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.two img {
+    padding: 20px 20px 0;
+}
+
+.three {
+    grid-column: 1/4;
+}
+
+figcaption {
+    text-align: center;
+    padding: 5px;
+    font-family: var(--secondary-font);
+}
+
+.btns {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding-bottom: 10px;
+    margin: 10px;
+    border-bottom: 1px solid #1d2d44;
+}
+
+.btn {
+    background-color: var(--main-color);
+    color: var(--tertiary-color);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 50px;
+    font-family: var(--primary-font);
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    transition: calc(0.4s);
+    cursor: pointer;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.course-card {
+    margin: 20px 10px 10px 10px;
+    padding: 10px;
+    font-family: var(--secondary-font);
+    background-color: #03071e;
+    color: #ffba08;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#credit {
+    text-align: center;
+    font-family: var(--main-font);
+}
+
+#credit span {
+    color: var(--main-color);
+    font-size: 1.3rem;
+}
+
+footer {
+    background-color: var(--main-color);
+    color: var(--tertiary-color);
+    font-family: var(--primary-font);
+    padding: 30px;
+    text-align: center;
+}
+
+#lastModified {
+    color: #ffba08;
+    padding-top: 5px;
+}
+
+dialog {
+    border: 1px solid rgb(0 0 0 / 10%);
+    border-radius: .25rem;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0 3rem #777;
+    width: 60%;
+    max-width: 700px;
+    margin: 5rem auto;
+}
+
+::backdrop {
+    background-color: rgb(0 0 0 / 50%);
+}
+
+dialog div {
+    display: grid;
+    grid-template-columns: auto 44px;
+    text-align: center;
+    background-color: #1d2d44;
+    color: #fff;
+    padding: 20px;
+    font-family: var(--main-font);
+    margin-bottom: 1.4rem;
+}
+
+dialog button {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+}
+
+dialog button:hover {
+    cursor: pointer;
+}
+
+dialog p {
+    font-family: var(--primary-font);
+}
+
+dialog h3 {
+    padding-bottom: 10px;
+    font-family: var(--secondary-font);
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+dialog #credits {
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 1.2rem;
+    color: #1d2d44;
+    font-style: italic;
+}
+
+dialog #certificate {
+    text-align: center;
+    padding-bottom: 10px;
+    color: #1d2d44;
+}
+
+dialog #course-info {
+    word-spacing: 3px;
+    line-height: 23px;
+    margin-bottom: 10px;
+}
+
+dialog #tools {
+    text-align: center;
+    color: #1d2d44;
+}

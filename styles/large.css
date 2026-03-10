@@ -1,0 +1,113 @@
+@media (max-width: 630px) {
+    #hamButton {
+        display: block;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 2rem;
+        margin-right: -10px;
+        padding: 5px;
+        transition: calc(0.3s);
+    }
+
+    #hamButton:hover {
+        cursor: pointer;
+        background-color: #ffffff41;
+        border-radius: 5px;
+    }
+
+    .intro {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .intro h1 {
+        margin-left: -20px;
+        font-size: 1.5rem;
+    }
+
+    .intro img {
+        margin-left: -20px;
+        width: 100px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        list-style: none;
+    }
+
+    nav a {
+        display: none;
+        margin: 0;
+        padding: 1rem;
+        text-align: center;
+        text-decoration: none;
+        transition: 0.5s;
+        font-size: 1rem;
+    }
+
+    nav li {
+        width: 100%;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        list-style: none;
+    }
+
+    .active a {
+        display: block;
+    }
+
+    #hamButton::before {
+        content: '☰';
+    }
+
+    #hamButton.active::before {
+        content: "✕";
+    }
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .course-card {
+        width: 100%;
+        padding: 20px 0;
+        margin-bottom: -10px;
+    }
+
+    .btns {
+        display: flex;
+    }
+
+    .btn {
+        flex: 1 1 auto;
+        min-width: 70px;
+        padding: 0;
+        padding: 5px;
+    }
+
+    .section {
+        border: none;
+    }
+
+    .section h2 {
+        padding: 10px;
+        font-size: 1.3rem;
+    }
+
+    .three {
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happiness's Home Page</title>
+
+    <meta name="description"
+        content="WDD 231 - Web Frontend Development 1 - this assignment is my homepage and the courses I am offering">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger">
+    <link rel="stylesheet" href="styles/normalize.css">
+
+    <script src="scripts/courses.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/home-navigation.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <section class="intro">
+            <img src="images/profile.jpeg" alt="A profile photo of Gift Ndoma" width="150">
+            <h1>Gift Ndoma</h1>
+            <button type="button" id="hamButton" aria-label="Open Menu"></button>
+        </section>
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html" class="selected" target="_blank">Home</a></li>
+                <li><a href="chamber/index.html" target="_blank">Chamber</a></li>
+                <li><a href="final-project/index.html" target="_blank">Final</a></li>
+                <li><a href="https://github.com/gift-ndoma" target="_blank">Github Profile</a></li>
+                <li><a href="https://www.linkedin.com/in/gift-ndoma-59a9a82a8/" target="_blank">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Home</h1>
+    
+        <div class="grid">
+            <section class="section one">
+                <h2>Course Work</h2>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </section>
+            <section class="section two">
+                <h2>Ibadan, Nigeria</h2>
+                <figure>
+                    <img src="images/nigeria.jpg" alt="Nigeria Landscape" width="250">
+                    <figcaption>Nigeria Peace Hand</figcaption>
+                </figure>
+            </section>
+            <section class="section three">
+                <h2>Web and Computer Programming Certificate</h2>
+                <div class="btns">
+                    <button aria-label="All Courses" id="all-btn" type="button" class="btn">All</button>
+                    <button aria-label="CSE Courses" id="cse-btn" type="button" class="btn">CSE</button>
+                    <button aria-label="WDD Courses" id="wdd-btn" type="button" class="btn">WDD</button>
+                </div>
+                <p id="credit"></p>
+                <div id="container"></div>
+            </section>
+        </div>
+        <dialog id="course-details">
+            <div>
+                <h2></h2>
+                <button id="closeButton">❌</button>
+            </div>
+            <h3 id="course-name"></h3>
+            <p id="credits"></p>
+            <p id="certificate"></p>
+            <p id="course-info"></p>
+            <p id="tools"></p>
+        </dialog>
+    </main>
+
+    <footer>
+        <div class="social">
+            <a href="https://github.com/" target="_blank"><img src="images/github.svg" alt="github" width="16"
+                    height="16"></a>
+            <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedIn.svg" alt="linkedIn" width="16"
+                    height="16"></a>
+            <a href="https://x.com/" target="_blank"><img src="images/twitter-x.svg" alt="twitter-x" width="16"
+                    height="16"></a>
+        </div>
+        <p> &copy; <span id="currentYear"></span> &bull; Happiness Isaac &bull; Nigeria</p>
+        <p id="lastModified"></p>
+    </footer>
+   
+    
+</body>
+
+</html>
