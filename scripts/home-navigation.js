@@ -1,7 +1,8 @@
-const hamButton = document.getElementById('hamButton');
-const navigation = document.getElementById('nav');
+const hamBtn = document.querySelector('#ham-btn');
+const navBar = document.querySelector('#nav-bar');
 
-hamButton.addEventListener('click', () => {
-    hamButton.classList.toggle('active');
-    navigation.classList.toggle('active')
-})
+// Toggle the show class off and on
+hamBtn.addEventListener('click', () => {
+    navBar.classList.toggle('show');
+    hamBtn.classList.toggle('show');
+});

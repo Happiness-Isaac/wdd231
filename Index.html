@@ -13,52 +13,55 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger">
     <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+
 
     <script src="scripts/courses.js" defer></script>
     <script src="scripts/date.js" defer></script>
-    <script src="scripts/home-navigation.js"></script>
+    <script src="scripts/home-navigation.js" defer></script>
 
 </head>
 
 <body>
+    
     <header>
-        <section class="intro">
-            <img src="images/profile.jpeg" alt="A profile photo of Gift Ndoma" width="150">
-            <h1>Gift Ndoma</h1>
-            <button type="button" id="hamButton" aria-label="Open Menu"></button>
-        </section>
-        <nav id="nav">
-            <ul>
-                <li><a href="index.html" class="selected" target="_blank">Home</a></li>
-                <li><a href="chamber/index.html" target="_blank">Chamber</a></li>
-                <li><a href="final-project/index.html" target="_blank">Final</a></li>
-                <li><a href="https://github.com/gift-ndoma" target="_blank">Github Profile</a></li>
-                <li><a href="https://www.linkedin.com/in/gift-ndoma-59a9a82a8/" target="_blank">LinkedIn</a></li>
-            </ul>
-        </nav>
+        <img src="images/salad.svg" alt="Site Logo" width="300" height="300">
+        <span>Happiness Isaac</span>
+        <button id="ham-btn" class="hamburger"></button>
     </header>
+
+    <nav id="nav-bar" class="navigation">
+        <ul>
+            <li><a href="index.html" title="Home" class="active">Home</a></li>
+            <li><a href="#">Chamber</a></li>
+            <li><a href="#">Final</a></li>
+        </ul>
+    </nav>
+
     <main>
         <h1>Home</h1>
-    
+
         <div class="grid">
             <section class="section one">
-                <h2>Course Work</h2>
+                <h2>IT Degrees</h2>
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li><a href="https://www.byupathway.edu/associates-degree/information-technology" target="_blank">Associate of Information Technology</a></li>
+                    <li><a href="https://www.byupathway.edu/associates-degree/software-development" target="_blank">Associate of Software Development</a></li>
+                    <li><a href="https://www.byupathway.edu/bachelors-degree/information-technology" target="_blank">Bachelor's of Information Technology</a></li>
+                    <li><a href="https://www.byupathway.edu/bachelors-degree/software-development" target="_blank">Bachelor's of Software Development</a></li>
                 </ul>
             </section>
+
             <section class="section two">
-                <h2>Ibadan, Nigeria</h2>
+                <h2>Student Profile Picture</h2>
                 <figure>
-                    <img src="images/nigeria.jpg" alt="Nigeria Landscape" width="250">
-                    <figcaption>Nigeria Peace Hand</figcaption>
+                    <img src="images/profile.webp" alt="Happiness isaac" width="250">
+                    <figcaption>H.B.I</figcaption>
                 </figure>
             </section>
+
             <section class="section three">
                 <h2>Web and Computer Programming Certificate</h2>
                 <div class="btns">
@@ -70,17 +73,6 @@
                 <div id="container"></div>
             </section>
         </div>
-        <dialog id="course-details">
-            <div>
-                <h2></h2>
-                <button id="closeButton">❌</button>
-            </div>
-            <h3 id="course-name"></h3>
-            <p id="credits"></p>
-            <p id="certificate"></p>
-            <p id="course-info"></p>
-            <p id="tools"></p>
-        </dialog>
     </main>
 
     <footer>

@@ -1,4 +1,3 @@
-
 const courses = [
     {
         subject: 'CSE',
@@ -35,7 +34,7 @@ const courses = [
         technology: [
             'Python'
         ],
-        completed: true
+        completed: false
     },
     {
         subject: 'CSE',
@@ -79,6 +78,9 @@ const courses = [
     }
 ]
 
+
+
+
 const allBtn = document.getElementById('all-btn');
 const cseBtn = document.getElementById('cse-btn');
 const wddBtn = document.getElementById('wdd-btn');
@@ -91,16 +93,19 @@ function displayCourses(courses) {
         let card = document.createElement("div")
         card.classList.add("course-card");
 
-        const totalCredits = courses.reduce((total, course) => total + course.credits, 0)
-        document.getElementById('credit').innerHTML = `Total Number of Credits: <span>${totalCredits}</span>`;
-
+        const totalCredits = courses.reduce((total, course) => total + course.credits, 0);
+        document.getElementById('credit').innerHTML =
+            `Total Number of Credits: <span>${totalCredits}</span>`;
+        
         let content;
         if (course.completed == true) {
             content = "✔";
         } else {
-            content = "‼";
-            card.style.backgroundColor = '#ffba08';
-            card.style.color = '#03071e';
+            content = "?";
+            card.style.backgroundColor = '#DAA520';
+            card.style.color = '#420d4b';
+            
+           
         }
 
         card.innerHTML = `
@@ -129,34 +134,5 @@ wddBtn.addEventListener('click', () => {
 
 allBtn.addEventListener('click', () => {
     displayCourses(courses)
-})
+});
 
-const closeButton = document.querySelector("#course-details button");
-const openDialog = document.querySelector("#course-details");
-const subject = document.querySelector("#course-details h2");
-const courseName = document.querySelector("#course-name");
-const credits = document.querySelector("#credits");
-const certificate = document.querySelector("#certificate");
-const courseInfo = document.querySelector("#course-info");
-const techTools = document.querySelector("#tools");
-
-closeButton.addEventListener("click", () => {
-    openDialog.close();
-})
-
-function showItems(x) {
-    console.log(x);
-    subject.innerHTML = `${x.subject} ${x.number}`;
-    courseName.innerHTML = x.title;
-    credits.innerHTML = `${x.credits} credits`;
-    certificate.innerHTML = `<b>Certificate: </b>${x.certificate}`;
-    courseInfo.innerHTML = x.description;
-    techTools.innerHTML = `<b>Technology: </b>${x.technology}`;
-    openDialog.showModal();
-}
-
-window.addEventListener("click", (event) => {
-    if (event.target == openDialog) {
-        openDialog.close();
-    }
-})
