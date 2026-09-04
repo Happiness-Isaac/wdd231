@@ -109,7 +109,7 @@ h1 {
 
 .card h2,
 .three h2 {
-    background: linear-gradient(0deg, var(--accent-dark), var(--accent-light));
+    background: var(--accent-dark);
     color: var(--inline-color);
     margin: 0;
     padding: 1rem;
