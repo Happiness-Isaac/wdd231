@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/circle-h-solid-full (2).svg">
+    <title>Happiness's WDD 231 Coursework </title>
+    <meta name="description"
+        content="Explore the academic coursework completed by Happiness Isaac for the Software Development degree program at Brigham Young University Idaho.">
+    <meta name="author" content="Happiness Isaac">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fondamento:ital@0;1&display=swap" rel="stylesheet">
+
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <svg class="logo" viewBox="0 0 100 100" width="50" height="50">
+                <circle cx="50" cy="50" r="40" fill="#8a328c" />
+                <text x="50" y="60" font-family="Fondamento" font-size="35" fill="#d59d0f"
+                    text-anchor="middle">HI</text>
+            </svg>
+            <span>Happiness Isaac</span>
+        </div>
+        <button id="menu" aria-label="Toggle Menu" aria-expanded="false" aria-controls="animate-nav"></button>
+        <nav id="animate-nav">
+            <a href="#" class="active">Home</a>
+            <a href="#">Chamber</a>
+            <a href="#">Final</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Home</h1>
+
+        <div class="grid-container">
+
+            <section class="card about-card">
+                <h2>About Me</h2>
+                <p>I am a Software Development student at Brigham Young University-Idaho. This platform
+                    displays my academic progress, structural coding benchmarks, and completed certifications throughout
+                    the
+                    curriculum.</p>
+            </section>
+
+            <section class="card profile-card">
+                <h2>Student Profile Photo</h2>
+                <img src="images/profile.webp" alt="Portrait of Happiness Isaac">
+            </section>
+
+            <section class="section three">
+                <h2>Web and Computer Programming Certificate</h2>
+
+                <div class="btns">
+                    <button aria-label="All Courses" id="all-btn" type="button" class="btn show">All</button>
+                    <button aria-label="CSE Courses" id="cse-btn" type="button" class="btn">CSE</button>
+                    <button aria-label="WDD Courses" id="wdd-btn" type="button" class="btn">WDD</button>
+                </div>
+
+                <p id="credit"></p>
+                <div id="container"></div>
+            </section>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="social">
+            <a href="https://github.com/" target="_blank"><img src="images/github.svg" alt="github"></a>
+            <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedIn.svg" alt="linkedIn"></a>
+            <a href="https://x.com/" target="_blank"><img src="images/twitter-x.svg" alt="twitter-x"></a>
+        </div>
+        <p> &copy; <span id="current-year"></span> &bull; Happiness Isaac &bull; Nigeria</p>
+        <p id="lastModified"></p>
+    </footer>
+
+</body>
+</html>
