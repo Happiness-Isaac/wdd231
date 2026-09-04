@@ -167,6 +167,13 @@ h1 {
     cursor: pointer;
 }
 
+.btn.show{
+    background-color: var(--inline-color);
+    border-color: var(--accent-dark);
+    color: var(--accent-dark);
+    font-weight: 700;
+}
+
 #credit {
     text-align: center;
 }

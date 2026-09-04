@@ -135,8 +135,12 @@ function displayCourses(courseList) {
 }
 
 function setActiveButton(button) {
-    buttons.forEach(btn => btn.classList.remove('show'));
+    buttons.forEach(btn => {
+        btn.classList.remove('show');
+        btn.setAttribute('aria-pressed', 'false');
+    });
     button.classList.add('show');
+    button.setAttribute('aria-pressed', 'true');
 }
 
 cseBtn.addEventListener('click', () => {
