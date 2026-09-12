@@ -1,0 +1,18 @@
+{
+    "family_name": "Iyip",
+    "move_in_date": "2025-06-24",
+    "number_of_people": 2,
+    "visited_by_bishopric": true,
+    "family_members": [
+        {
+        "name": "Happiness Isaac Iyip",
+        "gender": "Female",
+        "birthdate": "1998-04-14"
+        },
+        {
+            "name": "Happiness Isaac Iyip",
+            "gender": "Female",
+            "birthdate": "1998-04-14"
+        }
+    ]
+}
