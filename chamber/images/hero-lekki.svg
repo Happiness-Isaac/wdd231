@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 620" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#173B36"/>
+      <stop offset="0.55" stop-color="#20514a"/>
+      <stop offset="1" stop-color="#2b6459"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E0A63F"/>
+      <stop offset="1" stop-color="#B7791F"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b6459"/>
+      <stop offset="1" stop-color="#12302c"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#173B36" stop-opacity="0"/>
+      <stop offset="0.65" stop-color="#173B36" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#173B36" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+
+  <!-- sky -->
+  <rect width="1600" height="620" fill="url(#sky)"/>
+
+  <!-- sun -->
+  <circle cx="1180" cy="200" r="86" fill="url(#sun)" opacity="0.95"/>
+  <circle cx="1180" cy="200" r="130" fill="#B7791F" opacity="0.13"/>
+  <circle cx="1180" cy="200" r="178" fill="#B7791F" opacity="0.07"/>
+
+  <!-- distant skyline (far, muted) -->
+  <g fill="#0c2622" opacity="0.7">
+    <rect x="60" y="330" width="52" height="150"/>
+    <rect x="124" y="300" width="40" height="180"/>
+    <rect x="176" y="348" width="58" height="132"/>
+    <rect x="248" y="318" width="44" height="162"/>
+    <rect x="1320" y="320" width="50" height="160"/>
+    <rect x="1382" y="348" width="42" height="132"/>
+    <rect x="1436" y="306" width="54" height="174"/>
+    <rect x="1502" y="340" width="46" height="140"/>
+  </g>
+
+  <!-- main skyline -->
+  <g fill="#08201c">
+    <rect x="300" y="268" width="70" height="212"/>
+    <rect x="382" y="196" width="58" height="284"/>
+    <polygon points="452,480 452,150 512,110 512,480"/>
+    <rect x="524" y="232" width="76" height="248"/>
+    <rect x="612" y="286" width="54" height="194"/>
+    <polygon points="678,480 678,178 734,142 790,178 790,480"/>
+    <rect x="802" y="250" width="64" height="230"/>
+    <rect x="878" y="300" width="48" height="180"/>
+    <polygon points="938,480 938,206 996,170 996,480"/>
+    <rect x="1008" y="286" width="70" height="194"/>
+    <rect x="1090" y="330" width="52" height="150"/>
+    <rect x="1154" y="296" width="60" height="184"/>
+    <rect x="1226" y="344" width="48" height="136"/>
+  </g>
+
+  <!-- gold window accents -->
+  <g fill="#B7791F" opacity="0.85">
+    <rect x="470" y="170" width="6" height="290"/>
+    <rect x="486" y="182" width="6" height="278"/>
+    <rect x="700" y="206" width="6" height="254"/>
+    <rect x="716" y="192" width="6" height="268"/>
+    <rect x="732" y="206" width="6" height="254"/>
+    <rect x="956" y="228" width="6" height="232"/>
+    <rect x="972" y="216" width="6" height="244"/>
+    <rect x="398" y="230" width="6" height="230"/>
+    <rect x="414" y="244" width="6" height="216"/>
+    <rect x="1172" y="322" width="6" height="138"/>
+    <rect x="1188" y="334" width="6" height="126"/>
+  </g>
+
+  <!-- small lit windows -->
+  <g fill="#B7791F" opacity="0.5">
+    <rect x="316" y="300" width="9" height="12"/><rect x="336" y="300" width="9" height="12"/>
+    <rect x="316" y="336" width="9" height="12"/><rect x="336" y="336" width="9" height="12"/>
+    <rect x="316" y="372" width="9" height="12"/><rect x="336" y="372" width="9" height="12"/>
+    <rect x="544" y="266" width="9" height="12"/><rect x="566" y="266" width="9" height="12"/>
+    <rect x="544" y="304" width="9" height="12"/><rect x="566" y="304" width="9" height="12"/>
+    <rect x="544" y="342" width="9" height="12"/><rect x="566" y="342" width="9" height="12"/>
+    <rect x="822" y="286" width="9" height="12"/><rect x="844" y="286" width="9" height="12"/>
+    <rect x="822" y="324" width="9" height="12"/><rect x="844" y="324" width="9" height="12"/>
+    <rect x="1028" y="320" width="9" height="12"/><rect x="1050" y="320" width="9" height="12"/>
+    <rect x="1028" y="358" width="9" height="12"/><rect x="1050" y="358" width="9" height="12"/>
+  </g>
+
+  <!-- gold sweep echoing the logo -->
+  <path d="M-20,470 C280,404 760,432 1080,452 C1300,466 1460,470 1620,458"
+        stroke="#B7791F" stroke-width="5" fill="none" opacity="0.9"/>
+  <path d="M-20,486 C300,424 800,452 1120,470 C1330,482 1470,486 1620,476"
+        stroke="#B7791F" stroke-width="2" fill="none" opacity="0.45"/>
+
+  <!-- water -->
+  <rect x="0" y="480" width="1600" height="140" fill="url(#water)"/>
+  <g stroke="#B7791F" fill="none" opacity="0.28">
+    <path d="M0,512 C120,500 200,524 320,512 C440,500 520,524 640,512 C760,500 840,524 960,512 C1080,500 1160,524 1280,512 C1400,500 1480,524 1600,512" stroke-width="2.5"/>
+    <path d="M0,552 C140,540 220,564 360,552 C500,540 580,564 720,552 C860,540 940,564 1080,552 C1220,540 1300,564 1440,552 C1520,546 1560,550 1600,552" stroke-width="2"/>
+    <path d="M0,592 C160,580 240,604 400,592 C560,580 640,604 800,592 C960,580 1040,604 1200,592 C1360,580 1440,604 1600,592" stroke-width="1.5"/>
+  </g>
+  <!-- sun reflection -->
+  <g fill="#B7791F" opacity="0.2">
+    <rect x="1140" y="496" width="80" height="6" rx="3"/>
+    <rect x="1152" y="520" width="56" height="5" rx="2.5"/>
+    <rect x="1144" y="544" width="72" height="4" rx="2"/>
+    <rect x="1158" y="568" width="44" height="4" rx="2"/>
+  </g>
+
+  <!-- bottom vignette for text legibility -->
+  <rect x="0" y="0" width="1600" height="620" fill="url(#fade)"/>
+</svg>

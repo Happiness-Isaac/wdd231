@@ -1,0 +1,103 @@
+{
+    "members": [
+        {
+            "name": "Lekki Lagoon Bistro",
+            "address": "300 Admiralty Way, Peninsula 1, Lagos",
+            "phone": "+(234) 708 786 9355",
+            "url": "https://lekkilagoonbistro.xyz",
+            "image": "lounge.webp",
+            "membership": 3,
+            "category": "Restaurant & Relaxation",
+            "founded": 2016,
+            "tagline": "Waterside dining with a Lagos coastal menu"
+        },
+        {
+            "name": "Greenview Wellness Spa",
+            "address": "5 Chisco Bus Stop, Lekki-Epe Expressway, Lagos",
+            "phone": "+(234) 708 786 9355",
+            "url": "https://greenviewwellness.xyz",
+            "image": "spa.webp",
+            "membership": 1,
+            "category": "Health & Wellness",
+            "founded": 2020,
+            "tagline": "Massage, skincare, and mindfulness studio"
+        },
+        {
+            "name": "Blue Harbour Tech Solution",
+            "address": "Plot 9, Lekki Free Trade Zone, Lagos",
+            "phone": "+(234) 708 786 9355",
+            "url": "https://blueharbourtech.xyz",
+            "image": "tech.webp",
+            "membership": 2,
+            "category": "Technology & Coworking",
+            "founded": 2019,
+            "tagline": "Coworking space, AI consulting firm and Academy"
+        },
+        {
+            "name": "Sunrise Bakery & Cafe",
+            "address": "31 Ologolo Road, Lekki, Lagos",
+            "phone": "+(234) 708 786 9355",
+            "url": "https://sunrisebakerylekki.xyz",
+            "image": "cafe.webp",
+            "membership": 1,
+            "category": "Bakery & Cafe",
+            "founded": 2017,
+            "tagline": "Fresh bread, pastries, and specialty coffee"
+        },
+        {
+           "name": "Ensign Realty Group",
+            "address": "45 Freedom Way, Lekki Phase 1, Lagos",
+            "phone": "+(234) 708 786 9355",
+            "url": "https://ensignrealtygroup.xyz",
+            "image": "realtors.webp",
+            "membership": 2,
+            "category": "Real Estate",
+            "founded": 2011,
+            "tagline": "Land, homes, and commercial property across Lekki"
+        },
+        {
+            "name": "H.B.I Stitches",
+            "address": "78 Chevron Drive, Lekki, Lagos",
+            "phone": "+(234) 708 786 9355",
+            "url": "https://hbistitches.xyz",
+            "image": "fashion.webp",
+            "membership": 3,
+            "category": "Fashion & Retail",
+            "founded": 2014,
+            "tagline": "Custom-tailored menswear for every occasion, cut to your style"
+        },
+        {
+            "name": "Lekki Fitness Arena",
+            "address": "60 Igbo-Efon, Lekki-Epe Expressway, Lagos",
+            "phone": "+(234) 708 786 9355",
+            "url": "https://lekkifitnessarena.xyz",
+            "image": "fitness.webp",
+            "membership": 2,
+            "category": "Fitness & Recreation",
+            "founded": 2018,
+            "tagline": "Full gym floor, group classes, and personal training"
+        },
+        {
+            "name": "Lekki Coastal Logistics",
+            "address": "23 Freedom Way, Lekki Phase 1, Lagos",
+            "phone": "+(234) 708 786 9355",
+            "url": "https://lekkicoastallogistics.xyz",
+            "image": "logistics.webp",
+            "membership": 3,
+            "category": "Logistics & Freight",
+            "founded": 2013,
+            "tagline": "Port-to-door freight and last mile delivery"
+        },
+        {
+            "name": "Beehive Law Chamber",
+            "address": "16 Admiralty Road, Lekki Phase 1, Lagos",
+            "phone": "+(234) 708 786 9355",
+            "url": "https://beehivelawchamber.xyz",
+            "image": "law.webp",
+            "membership": 1,
+            "category": "Legal Services",
+            "founded": 2008,
+            "tagline": "Corporate, property, and family law practice"
+        }
+    ]
+}

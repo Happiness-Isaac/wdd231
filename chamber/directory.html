@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Directory | Lekki Business Chamber of Commerce</title>
+    <meta name="description" content="Explore member businesses and organizations that are part of Lekki Business Chamber of Commerce">
+    <meta name="author" content="Happiness Isaac">
+    
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <meta property="og:title" content="Lekki Business Chamber of Commerce — Business Directory">
+    <meta property="og:description" content="Discover and connect with member businesses of the Lekki Business Chamber of Commerce in Lekki, Lagos.">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+ 
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+
+    <script src="scripts/directory.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-bar">
+            <a href="index.html" class="brand">
+                <img src="images/logo.webp" alt="Lekki Business Chamber of Commerce logo" class="brand-logo">
+                <span class="brand-text">Chamber of Commerce</span>
+            </a>
+
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-pressed="false" title="toggle dark mode">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+                        <path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"></path>
+                    </svg>
+                    <span class="visually-hidden">Toggle Dark Mode</span>
+                </button>
+
+                <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+                    <span class="visually-hidden">Menu</span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <nav id="primary-nav" class="primary-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">join</a></li>
+                <li><a href="discove.html">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="images/hero-lekki.svg" alt="Lekki Skyline" class="hero-image">
+        <div class="hero-overlay">
+            <p class="hero-eyebrow"> LEKKI, LAGOS &mdash; NIGERIA</p>
+            <h1>Business Directory</h1>
+            <p class="hero-lead">Explore the businesses that make up the Lekki Business Chamber of Commerce. From coastal dining to real eastate, tecnology and more. Our members are the backbone of the local economy. </p>
+        </div>
+    </section>
+
+    <main>
+        <div class="visit-banner" id="visit-banner" hidden>
+            <span class="visit-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M12 2.6l2.6 5.8 6.4.7-4.8 4.3 1.3 6.3L12 16.5 6.5 19.7l1.3-6.3L3 9.1l6.4-.7z" fill="currentColor">
+                    </path>
+                </svg>
+            </span>
+            <span class="visit-text" id="visit-text"></span>
+        </div>
+
+        <div class="directory-controls">
+            <div class="view-toggle" role="group" aria-label="Directory display view">
+                <button type="button" id="grid-view-btn" aria-pressed="true" title="Grid View">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <rect x="3" y="3" width="8" height="8" rx="1.5"></rect>
+                        <rect x="13" y="3" width="8" height="8" rx="1.5"></rect>
+                        <rect x="3" y="13" width="8" height="8" rx="1.5"></rect>
+                        <rect x="13" y="13" width="8" height="8" rx="1.5"></rect>
+                    </svg>
+                    <span class="visually-hidden">Grid View</span>
+                </button>
+                <button type="button" id="list-view-btn" aria-pressed="false" title="List view">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <rect x="3" y="4" width="5" height="5" rx="1"></rect>
+                        <rect x="11" y="4.5" width="10" height="4" rx="1"></rect>
+                        <rect x="3" y="14" width="5" height="5" rx="1"></rect>
+                        <rect x="11" y="14.5" width="10" height="4" rx="1"></rect>
+                    </svg>
+                    <span class="visually-hidden">List view</span>
+                </button>
+            </div>
+            <p class="count" id="member-count">Loading Members&hellip;</p>
+        </div>
+
+        <div id="member-list">
+            <p class="loading-message">Loading member directory&hellip;</p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bar">
+            <div class="footer-contact">
+                <h2>Lekki Business Chamber of Commerce</h2>
+                <p>14 Admiralty Way, Lekki Penninsula 1</p>
+                <p>Lagos, Nigeria</p>
+                <p>info@lekkichamber.org</p>
+                <p>+(234) 708 786 9355/p>
+            </div>
+    
+            <div class="footer-social">
+                <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path
+                            d="M12 2C6.48 2 2 6.58 2 12.19c0 4.49 2.87 8.3 6.84 9.65.5.1.68-.22.68-.49 0-.24-.01-1.03-.01-1.87-2.78.61-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.49-1.11-1.49-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.94-2.35 4.8-4.58 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.19C22 6.58 17.52 2 12 2z" />
+                    </svg>
+                </a>
+                <a href="https://x.com" target="_blank" rel="noopener" aria-label="X">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path
+                            d="M18.24 3H21l-6.6 7.54L22.2 21h-6.2l-4.86-6.36L5.5 21H2.72l7.07-8.08L2 3h6.34l4.4 5.82L18.24 3zm-1.08 16.17h1.72L7.9 4.73H6.06l11.1 14.44z" />
+                    </svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path
+                            d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11H3zM10 9.5h3.8v1.5h.05c.53-.95 1.83-1.95 3.75-1.95 4 0 4.75 2.5 4.75 5.8v5.65h-4v-5c0-1.2-.02-2.75-1.75-2.75s-2 1.3-2 2.65v5.1h-4z" />
+                    </svg>
+                </a>
+            </div>
+    
+            <div class="footer-dev">
+                <h2>WDD 231 Class Project</h2>
+                <p>Happiness B. Isaac</p>
+                <p>&copy; <span id="current-year"></span> Lekki Business Chamber of Commerce</p>
+                <p>Last Modification: <span id="last-modified"></span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
