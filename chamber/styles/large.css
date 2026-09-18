@@ -1,6 +1,12 @@
+/* =========================================================
+   Lekki Business Chamber of Commerce
+   larger.css — enhancements for wider viewports
+   ========================================================= */
+
 @media screen and (min-width: 700px) {
 
-    /* header and nav */
+    /* ---------- Header / nav ---------- */
+
     .header-bar {
         padding: 1rem 1.5rem;
     }
@@ -38,7 +44,8 @@
         border-color: var(--clr-secondary);
     }
 
-    /*hero*/
+    /* ---------- Hero ---------- */
+
     .hero-image {
         height: 400px;
     }
@@ -51,7 +58,8 @@
         font-size: 1.05rem;
     }
 
-    /* main */
+    /* ---------- Main ---------- */
+
     main {
         padding: 2.5rem 1.5rem 4rem;
     }
@@ -61,7 +69,8 @@
         gap: 1.5rem;
     }
 
-    /* footer */
+    /* ---------- Footer: text | icons | text ---------- */
+
     .footer-bar {
         flex-direction: row;
         align-items: center;

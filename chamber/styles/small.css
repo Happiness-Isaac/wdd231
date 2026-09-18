@@ -1,11 +1,18 @@
+/* =========================================================
+   Lekki Business Chamber of Commerce
+   small.css — mobile-first base styles (320px and up)
+   ========================================================= */
+
 :root {
-    /* brand colors */
+    /* Brand colors */
     --clr-primary: #173b36;
     /* deep brand green */
     --clr-primary-dark: #0e2521;
     /* darker green */
     --clr-secondary: #b7791f;
     /* brand gold */
+    --clr-secondary-text: #925f18;
+    /* darker gold — meets 4.5:1 as TEXT on light backgrounds */
     --clr-bg: #f5f7f6;
     /* page background */
     --clr-surface: #ffffff;
@@ -18,7 +25,7 @@
     /* secondary text */
     --clr-border: #dbe1de;
 
-    /* membership badges */
+    /* Membership badges */
     --clr-member: #2f6f8f;
     /* teal-blue — clearly distinct from gold/silver */
     --clr-silver: #8b949c;
@@ -26,16 +33,16 @@
     --clr-gold: #b7791f;
     /* brand gold */
 
-    /* type */
+    /* Type */
     --font-display: "Fraunces", Georgia, "Times New Roman", serif;
     --font-body: "Karla", Arial, Helvetica, sans-serif;
 
-    /* layout */
+    /* Layout */
     --max-width: 1120px;
     --radius: 6px;
 }
 
-/* darkmode */
+/* ---------- Dark mode ---------- */
 body.dark-mode {
     --clr-bg: #10201d;
     --clr-surface: #1a2f2b;
@@ -109,7 +116,10 @@ p {
     white-space: nowrap;
 }
 
-/* header*/
+/* =========================================================
+   Header — light band so the logo sits on its own backdrop
+   ========================================================= */
+
 .site-header {
     background-color: var(--clr-bg);
     border-bottom: 3px solid var(--clr-secondary);
@@ -144,10 +154,10 @@ p {
 .brand-text {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.2;
     letter-spacing: 0.01em;
-    color: var(--clr-secondary);
+    color: #8a5a17;
     border-left: 2px solid var(--clr-secondary);
     padding-left: 0.65rem;
     position: relative;
@@ -155,7 +165,12 @@ p {
 }
 
 body.dark-mode .brand-logo {
+    /* keep the logo legible on the dark band without altering its colors on light */
     filter: brightness(1.45) saturate(1.05);
+}
+
+body.dark-mode .brand-text {
+    color: #e0a63f;
 }
 
 .header-actions {
@@ -208,7 +223,8 @@ body.dark-mode .brand-logo {
     background-color: var(--clr-primary);
 }
 
-/* green bar nav */
+/* ---------- Navigation: the dark green bar ---------- */
+
 .primary-nav {
     display: none;
     background-color: var(--clr-primary-dark);
@@ -224,7 +240,6 @@ body:not(.dark-mode) .primary-nav {
 
 .primary-nav ul {
     list-style: none;
-    margin: 0;
     padding: 0.25rem 1rem 0.75rem;
     display: flex;
     flex-direction: column;
@@ -252,10 +267,18 @@ body:not(.dark-mode) .primary-nav {
     color: var(--clr-secondary);
 }
 
-/* hero */
+/* =========================================================
+   Hero
+   ========================================================= */
+
 .hero {
     position: relative;
     isolation: isolate;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-top: -1.75rem;
+    margin-bottom: 1.75rem;
 }
 
 .hero-image {
@@ -273,7 +296,8 @@ body:not(.dark-mode) .primary-nav {
     justify-content: center;
     text-align: center;
     padding: 1.25rem 1rem;
-    background: linear-gradient(180deg,
+   
+    background-image: linear-gradient(180deg,
             rgba(14, 37, 33, 0.25) 0%,
             rgba(14, 37, 33, 0.55) 100%);
 }
@@ -302,14 +326,18 @@ body:not(.dark-mode) .primary-nav {
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
 }
 
-/* main*/
+/* =========================================================
+   Main
+   ========================================================= */
+
 main {
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 1.75rem 1rem 3rem;
 }
 
-/* visit counter */
+/* ---------- Visit counter banner ---------- */
+
 .visit-banner {
     display: flex;
     align-items: center;
@@ -351,7 +379,8 @@ body.dark-mode .visit-banner {
     color: var(--clr-secondary);
 }
 
-/*directory controls */
+/* ---------- Directory controls (centered) ---------- */
+
 .directory-controls {
     display: flex;
     flex-direction: column;
@@ -420,7 +449,10 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
     stroke: var(--clr-secondary);
 }
 
-/* member cards */
+/* =========================================================
+   Member cards
+   ========================================================= */
+
 #member-list {
     display: grid;
     grid-template-columns: 1fr;
@@ -464,7 +496,7 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
 
 .member-card:hover img,
 .member-card:focus-within img {
-    filter: grayscale(60%);
+    filter: grayscale(25%);
     transform: scale(1.04);
 }
 
@@ -580,14 +612,14 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
     color: #e0a63f;
 }
 
-/* list view adjustments */
+/* List view adjustments */
 #member-list.list-view .member-card {
     flex-direction: row;
     align-items: stretch;
 }
 
 #member-list.list-view .member-card img {
-    width: 300px;
+    width: 110px;
     aspect-ratio: 1 / 1;
     flex-shrink: 0;
 }
@@ -603,7 +635,10 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
     color: var(--clr-muted);
 }
 
-/* footer*/
+/* =========================================================
+   Footer — left text | centered icons | right text
+   ========================================================= */
+
 .site-footer {
     background-color: #173b36;
     color: #f5f7f6;
