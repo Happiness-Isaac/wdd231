@@ -6,16 +6,17 @@
     --clr-gold-bright: #e0a63f;
     --clr-bg: #f5f7f6;
     --clr-surface: #ffffff;
-    --clr-text: #1f2933;
     --clr-text-light: #f5f7f6;
-    --clr-muted: var(--clr-text);
-    --clr-border: #dbe1de;
 
-    /* Membership badges — darkened slightly from brand gold/silver so pure white badge text passes 4.5:1 */
-    --clr-member: #2f6f8f;
-    --clr-silver: #73777b;
-    --clr-gold: #a16b1b;
-    
+    /* text on dark backgrounds */
+    --clr-muted: #5b6770;
+    --clr-border: #dbe1de;
+    /* Membership badges — now built from the existing brand palette
+       instead of introducing new hues (blue removed, gold de-duplicated) */
+    --clr-member: var(--clr-primary);
+    --clr-silver: var(--clr-muted);
+    --clr-gold: var(--clr-secondary);
+
     /* Type */
     --font-display: "Fraunces", Georgia, "Times New Roman", serif;
     --font-body: "Karla", Arial, Helvetica, sans-serif;
@@ -30,10 +31,14 @@ body.dark-mode {
     --clr-bg: #10201d;
     --clr-surface: #1a2f2b;
     --clr-text: #e7ece9;
+    --clr-muted: #a8b6b1;
     --clr-border: #2c4540;
     --clr-primary: #dff0ea;
     /* light ink used where primary was text/icon color */
     --clr-primary-dark: #0a1815;
+    /* keep the member badge on brand green even though --clr-primary
+       has been repurposed as light ink in dark mode */
+    --clr-member: #173b36;
 }
 
 *,
@@ -62,7 +67,7 @@ img {
 }
 
 a {
-    color: var(--clr-gold-bright);
+    color: var(--clr-secondary);
     text-decoration: none;
 }
 
@@ -136,7 +141,7 @@ p {
     font-size: 1rem;
     line-height: 1.2;
     letter-spacing: 0.01em;
-    color: var(--clr-gold-bright);
+    color: var(--clr-secondary);
     border-left: 2px solid var(--clr-secondary);
     padding-left: 0.65rem;
     position: relative;
@@ -145,6 +150,10 @@ p {
 
 body.dark-mode .brand-logo {
     filter: brightness(1.45) saturate(1.05);
+}
+
+body.dark-mode .brand-text {
+    color: var(--clr-gold-bright);
 }
 
 .header-actions {
@@ -179,7 +188,7 @@ body.dark-mode .brand-logo {
 .theme-toggle:hover,
 .theme-toggle:focus-visible {
     border-color: var(--clr-secondary);
-    color: var(--clr-gold-bright);
+    color: var(--clr-secondary);
 }
 
 .nav-toggle {
@@ -224,7 +233,7 @@ body:not(.dark-mode) .primary-nav {
     display: block;
     color: var(--clr-text-light);
     padding: 0.7rem 0.25rem;
-    border-bottom: 1px solid rgba(245, 247, 246, 0.12);
+
     font-weight: 700;
     font-size: 1rem;
     letter-spacing: 0.02em;
@@ -240,8 +249,48 @@ body:not(.dark-mode) .primary-nav {
    change, so it reads clearly on mobile too (not only the desktop underline) */
 .primary-nav a[aria-current="page"] {
     color: var(--clr-gold-bright);
-    background-color: rgba(224, 166, 63, 0.16);
-    border-radius: 6px;
+    border-radius: 50px;
+}
+
+@media screen and (min-width: 700px) {
+
+    /* header / nav */
+    .header-bar {
+        padding: 1rem 1.5rem;
+    }
+
+    .brand-logo {
+        height: 64px;
+    }
+
+    .brand-text {
+        font-size: 1.1rem;
+        top: 25px;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .primary-nav {
+        display: block;
+    }
+
+    .primary-nav ul {
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 0 1.5rem;
+        gap: 0.5rem;
+    }
+
+    .primary-nav a {
+        border-bottom: 3px solid transparent;
+        padding: 0.85rem 1rem;
+    }
+
+    .primary-nav a[aria-current="page"] {
+        border-color: var(--clr-gold-bright);
+    }
 }
 
 /* hero */
@@ -355,7 +404,7 @@ body.dark-mode .visit-banner {
     height: 34px;
     border-radius: 50%;
     background-color: rgba(183, 121, 31, 0.18);
-    color: var(--clr-gold-bright);
+    color: var(--clr-secondary);
     flex-shrink: 0;
 }
 
@@ -365,7 +414,7 @@ body.dark-mode .visit-banner {
 }
 
 .visit-text strong {
-    color: var(--clr-gold-bright);
+    color: var(--clr-secondary);
 }
 
 /* section headings */
@@ -445,7 +494,7 @@ section+section {
 
 .view-toggle button:hover svg,
 .view-toggle button:focus-visible svg {
-    stroke: var(--clr-gold-bright);
+    stroke: var(--clr-secondary);
 }
 
 .view-toggle button[aria-pressed="true"] {
@@ -541,10 +590,15 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
 
 .member-category {
     font-size: 0.78rem;
-    color: var(--clr-gold-bright);
+    color: var(--clr-secondary);
     font-weight: 700;
     margin: 0 0 0.15rem;
     transition: color 0.25s ease;
+}
+
+.member-card:hover .member-category,
+.member-card:focus-within .member-category {
+    color: var(--clr-gold-bright);
 }
 
 .badge {
@@ -589,8 +643,13 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.03em;
-    color: var(--clr-gold-bright);
+    color: var(--clr-secondary);
     margin-bottom: 0.15rem;
+}
+
+.member-card:hover .founded,
+.member-card:focus-within .founded {
+    color: var(--clr-gold-bright);
 }
 
 .member-card:hover address,
@@ -610,8 +669,13 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
 .member-card-links a {
     font-size: 0.82rem;
     font-weight: 700;
-    color: var(--clr-gold-bright);
+    color: var(--clr-secondary);
     transition: color 0.25s ease;
+}
+
+.member-card:hover .member-card-links a,
+.member-card:focus-within .member-card-links a {
+    color: var(--clr-gold-bright);
 }
 
 /* list view adjustments */
@@ -847,7 +911,7 @@ body.dark-mode .weather-temp {
 .spotlight-card a {
     font-size: 0.85rem;
     font-weight: 700;
-    color: var(--clr-gold-bright);
+    color: var(--clr-secondary);
 }
 
 /* footer*/
