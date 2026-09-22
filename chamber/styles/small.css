@@ -8,6 +8,8 @@
     /* brand gold */
     --clr-secondary-text: #925f18;
     /* darker gold — meets 4.5:1 as TEXT on light backgrounds */
+    --clr-gold-bright: #e0a63f;
+    /* bright gold — for text/icons sitting on dark backgrounds only */
     --clr-bg: #f5f7f6;
     /* page background */
     --clr-surface: #ffffff;
@@ -20,13 +22,13 @@
     /* secondary text */
     --clr-border: #dbe1de;
 
-    /* Membership badges */
+    /* Membership badges — darkened slightly from brand gold/silver so pure white badge text passes 4.5:1 */
     --clr-member: #2f6f8f;
     /* teal-blue — clearly distinct from gold/silver */
-    --clr-silver: #787c80;
+    --clr-silver: #73777b;
     /* true grey silver */
-    --clr-gold: #b7791f;
-    /* brand gold */
+    --clr-gold: #a16b1b;
+    /* brand gold, darkened for badge use */
 
     /* Type */
     --font-display: "Fraunces", Georgia, "Times New Roman", serif;
@@ -75,7 +77,7 @@ img {
 }
 
 a {
-    color: var(--clr-secondary);
+    color: var(--clr-secondary-text);
     text-decoration: none;
 }
 
@@ -149,7 +151,7 @@ p {
     font-size: 1rem;
     line-height: 1.2;
     letter-spacing: 0.01em;
-    color: #8a5a17;
+    color: var(--clr-secondary-text);
     border-left: 2px solid var(--clr-secondary);
     padding-left: 0.65rem;
     position: relative;
@@ -161,7 +163,7 @@ body.dark-mode .brand-logo {
 }
 
 body.dark-mode .brand-text {
-    color: #e0a63f;
+    color: var(--clr-gold-bright);
 }
 
 .header-actions {
@@ -249,12 +251,16 @@ body:not(.dark-mode) .primary-nav {
 
 .primary-nav a:hover,
 .primary-nav a:focus {
-    color: var(--clr-secondary);
+    color: var(--clr-gold-bright);
     text-decoration: none;
 }
 
+/* wayfinding: the current page gets a filled gold pill, not just a color
+   change, so it reads clearly on mobile too (not only the desktop underline) */
 .primary-nav a[aria-current="page"] {
-    color: var(--clr-secondary);
+    color: var(--clr-gold-bright);
+    background-color: rgba(224, 166, 63, 0.16);
+    border-radius: 6px;
 }
 
 /* hero */
@@ -290,7 +296,7 @@ body:not(.dark-mode) .primary-nav {
     font-size: 0.8rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--clr-secondary);
+    color: var(--clr-gold-bright);
     font-weight: 800;
     margin: 0 0 0.4rem;
 }
@@ -327,7 +333,7 @@ body:not(.dark-mode) .primary-nav {
 
 .hero-cta:hover,
 .hero-cta:focus-visible {
-    background-color: #e0a63f;
+    background-color: var(--clr-gold-bright);
     transform: translateY(-2px);
     box-shadow: 0 10px 24px rgba(183, 121, 31, 0.45);
     text-decoration: none;
@@ -341,7 +347,7 @@ main {
     padding: 1.75rem 1rem 3rem;
 }
 
-/* visit counter */
+/* visit counter — shown only on the home page (no #visit-banner markup on other pages) */
 .visit-banner {
     display: flex;
     align-items: center;
@@ -462,8 +468,8 @@ section+section {
 }
 
 .view-toggle button[aria-pressed="true"] {
-    background-color: var(--clr-primary);
-    border-color: var(--clr-primary);
+    background-color: var(--clr-primary-dark);
+    border-color: var(--clr-primary-dark);
 }
 
 body.dark-mode .view-toggle button[aria-pressed="true"] {
@@ -472,14 +478,15 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
 }
 
 .view-toggle button[aria-pressed="true"] svg {
-    fill: var(--clr-secondary);
-    stroke: var(--clr-secondary);
+    fill: var(--clr-gold-bright);
+    stroke: var(--clr-gold-bright);
 }
 
 /* member cards */
 #member-list {
     display: grid;
     grid-template-columns: 1fr;
+    align-items: stretch;
     gap: 1.1rem;
 }
 
@@ -496,6 +503,7 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    height: 100%;
     box-shadow: 0 1px 0 rgba(31, 41, 51, 0.04);
     transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -503,7 +511,7 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
 .member-card:hover,
 .member-card:focus-within {
     background-color: var(--clr-primary-dark);
-    border-color: var(--clr-primary);
+    border-color: var(--clr-primary-dark);
     transform: translateY(-4px);
     box-shadow: 0 10px 24px rgba(23, 59, 54, 0.28);
 }
@@ -552,7 +560,7 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
 
 .member-category {
     font-size: 0.78rem;
-    color: var(--clr-secondary);
+    color: var(--clr-secondary-text);
     font-weight: 700;
     margin: 0 0 0.15rem;
     transition: color 0.25s ease;
@@ -560,7 +568,7 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
 
 .member-card:hover .member-category,
 .member-card:focus-within .member-category {
-    color: var(--clr-secondary);
+    color: var(--clr-gold-bright);
 }
 
 .badge {
@@ -569,7 +577,7 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
     font-weight: 700;
     padding: 0.2rem 0.55rem;
     border-radius: 999px;
-    color: var(--clr-text-light);
+    color: #ffffff;
     white-space: nowrap;
     flex-shrink: 0;
     letter-spacing: 0.02em;
@@ -611,7 +619,7 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
 
 .member-card:hover .founded,
 .member-card:focus-within .founded {
-    color: #e0a63f;
+    color: var(--clr-gold-bright);
 }
 
 .member-card:hover address,
@@ -637,13 +645,14 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
 
 .member-card:hover .member-card-links a,
 .member-card:focus-within .member-card-links a {
-    color: #e0a63f;
+    color: var(--clr-gold-bright);
 }
 
 /* list view adjustments */
 #member-list.list-view .member-card {
     flex-direction: row;
     align-items: stretch;
+    height: auto;
 }
 
 #member-list.list-view .member-card img {
@@ -654,6 +663,7 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
 
 #member-list.list-view .member-card-body {
     padding: 0.7rem 0.9rem;
+    justify-content: center;
 }
 
 .loading-message,
@@ -704,7 +714,7 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
     font-size: 0.68rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: var(--clr-secondary);
+    color: var(--clr-gold-bright);
     margin-top: 0.2rem;
 }
 
@@ -720,59 +730,100 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
 }
 
 /* homepage weather */
-.events-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-}
-
-.event-card {
+.weather-card {
     background-color: var(--clr-surface);
     border: 1px solid var(--clr-border);
-    border-left: 4px solid var(--clr-secondary);
     border-radius: var(--radius);
-    padding: 1rem 1.1rem;
+    padding: 1.25rem;
     display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.weather-current {
+    display: flex;
+    align-items: center;
     gap: 1rem;
-    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
-.event-date {
+.weather-icon {
+    width: 64px;
+    height: 64px;
     flex-shrink: 0;
-    width: 62px;
-    text-align: center;
-    background-color: var(--clr-primary-dark);
-    color: var(--clr-text-light);
-    border-radius: 8px;
-    padding: 0.5rem 0.25rem;
-    font-family: var(--font-display);
 }
 
-.event-date .day {
-    display: block;
-    font-size: 1.3rem;
+.weather-temp {
+    font-family: var(--font-display);
+    font-size: 2.6rem;
     font-weight: 700;
+    color: var(--clr-primary);
     line-height: 1;
 }
 
-.event-date .month {
-    display: block;
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--clr-secondary);
-    margin-top: 0.2rem;
+body.dark-mode .weather-temp {
+    color: var(--clr-text);
 }
 
-.event-info h3 {
-    font-size: 1rem;
-    margin: 0 0 0.2rem;
+.weather-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
 }
 
-.event-info p {
-    font-size: 0.85rem;
+.weather-desc {
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.weather-location {
+    font-size: 0.82rem;
     color: var(--clr-muted);
-    margin: 0;
+}
+
+.weather-forecast {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+    border-top: 1px solid var(--clr-border);
+    padding-top: 1rem;
+}
+
+.forecast-day {
+    text-align: center;
+    background-color: var(--clr-bg);
+    border-radius: 8px;
+    padding: 0.6rem 0.3rem;
+}
+
+.forecast-day .f-label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--clr-muted);
+    margin-bottom: 0.3rem;
+}
+
+.forecast-day .f-icon {
+    display: block;
+    margin: 0 auto 0.2rem;
+}
+
+.forecast-day .f-temp {
+    display: block;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--clr-text);
+}
+
+.weather-loading,
+.weather-error {
+    color: var(--clr-muted);
+    font-size: 0.88rem;
+    text-align: center;
+    padding: 1rem 0;
 }
 
 /* homepage spotlights */

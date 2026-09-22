@@ -25,9 +25,11 @@
     <link rel="stylesheet" href="styles/large.css">
 
     <script src="scripts/directory.js" defer></script>
+    <script src="scripts/common.js" defer></script>
 </head>
 
 <body>
+
     <header class="site-header">
         <div class="header-bar">
             <a href="index.html" class="brand">
@@ -36,12 +38,12 @@
             </a>
 
             <div class="header-actions">
-                <button id="theme-toggle" class="theme-toggle" aria-pressed="false" title="toggle dark mode">
+                <button id="theme-toggle" class="theme-toggle" aria-pressed="false" title="Toggle dark mode">
                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                         <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
                         <path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"></path>
                     </svg>
-                    <span class="visually-hidden">Toggle Dark Mode</span>
+                    <span class="visually-hidden">Toggle dark mode</span>
                 </button>
 
                 <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
@@ -56,45 +58,36 @@
         <nav id="primary-nav" class="primary-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">join</a></li>
-                <li><a href="discove.html">Discover</a></li>
+                <li><a href="directory.html" aria-current="page">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="discover.html">Discover</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="hero">
-            <img src="images/hero-lekki.svg" alt="Lekki Skyline" class="hero-image">
+            <img src="images/hero-lekki.svg" alt="Stylised skyline of Lekki, Lagos at sunset over the lagoon"
+                class="hero-image">
             <div class="hero-overlay">
-                <p class="hero-eyebrow"> LEKKI, LAGOS &mdash; NIGERIA</p>
+                <p class="hero-eyebrow">Lekki, Lagos &mdash; Nigeria</p>
                 <h1>Business Directory</h1>
-                <p class="hero-lead">Explore the businesses that make up the Lekki Business Chamber of Commerce. From coastal
-                    dining to real eastate, tecnology and more. Our members are the backbone of the local economy. </p>
+                <p class="hero-lead">Explore the businesses that make up the Lekki Business Chamber of Commerce. From
+                    coastal dining to real estate and technology, our members are the backbone of the local economy.</p>
             </div>
         </section>
-        
-        
-        <div class="visit-banner" id="visit-banner" hidden>
-            <span class="visit-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" focusable="false">
-                    <path d="M12 2.6l2.6 5.8 6.4.7-4.8 4.3 1.3 6.3L12 16.5 6.5 19.7l1.3-6.3L3 9.1l6.4-.7z" fill="currentColor">
-                    </path>
-                </svg>
-            </span>
-            <span class="visit-text" id="visit-text"></span>
-        </div>
-        
+
         <div class="directory-controls">
             <div class="view-toggle" role="group" aria-label="Directory display view">
-                <button type="button" id="grid-view-btn" aria-pressed="true" title="Grid View">
+                <button type="button" id="grid-view-btn" aria-pressed="true" title="Grid view">
                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                         <rect x="3" y="3" width="8" height="8" rx="1.5"></rect>
                         <rect x="13" y="3" width="8" height="8" rx="1.5"></rect>
                         <rect x="3" y="13" width="8" height="8" rx="1.5"></rect>
                         <rect x="13" y="13" width="8" height="8" rx="1.5"></rect>
                     </svg>
-                    <span class="visually-hidden">Grid View</span>
+                    <span class="visually-hidden">Grid view</span>
                 </button>
                 <button type="button" id="list-view-btn" aria-pressed="false" title="List view">
                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -106,13 +99,14 @@
                     <span class="visually-hidden">List view</span>
                 </button>
             </div>
-            <p class="count" id="member-count">Loading Members&hellip;</p>
+            <p class="count" id="member-count">Loading members&hellip;</p>
         </div>
-        
+
         <div id="member-list">
             <p class="loading-message">Loading member directory&hellip;</p>
         </div>
     </main>
+
 
     <footer class="site-footer">
         <div class="footer-bar">

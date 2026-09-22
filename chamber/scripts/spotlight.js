@@ -12,7 +12,7 @@ function pickRandomSpotlights(members, count) {
 }
 
 function buildSpotlightCard(member) {
-    const card = document.createElement("section");
+    const card = document.createElement("article");
     card.className = "spotlight-card";
 
     const badge = spotlightBadgeInfo[member.membership];

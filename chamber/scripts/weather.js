@@ -4,11 +4,12 @@ const LEKKI_LAT = 6.43;
 const LEKKI_LON = 3.48;
 const UNITS = "metric"; // metric = °C
 
-const CURRENT_URL = `https://api.openweathermap.org/data/2.5/weather?lat=6.43&lon=3.48&units=metric&appid=341a637f78061cefa1bf108f5ad65491`;
-const FORECAST_URL = `https://api.openweathermap.org/data/2.5/weather?lat=6.43&lon=3.48&units=metric&appid=341a637f78061cefa1bf108f5ad65491`;
+const CURRENT_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${LEKKI_LAT}&lon=${LEKKI_LON}&units=${UNITS}&appid=${WEATHER_API_KEY}`;
+const FORECAST_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${LEKKI_LAT}&lon=${LEKKI_LON}&units=${UNITS}&appid=${WEATHER_API_KEY}`;
 
 const tempEl = document.getElementById("weather-temp");
 const descEl = document.getElementById("weather-desc");
+const iconEl = document.getElementById("weather-icon");
 const forecastEl = document.getElementById("weather-forecast");
 const currentBlock = document.getElementById("weather-current");
 
@@ -22,6 +23,10 @@ async function getCurrentWeather() {
 
     tempEl.textContent = `${Math.round(data.main.temp)}\u00B0C`;
     descEl.textContent = data.weather[0].description;
+    const iconCode = data.weather[0].icon;
+    iconEl.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+    iconEl.alt = data.weather[0].description;
+    iconEl.hidden = false;
 }
 
 // 3-day forcast
@@ -47,12 +52,15 @@ function buildForecastDay(entry) {
     const date = new Date(entry.dt_txt.replace(" ", "T"));
     const label = date.toLocaleDateString("en-US", { weekday: "short" });
     const temp = Math.round(entry.main.temp);
+    const iconCode = entry.weather[0].icon;
+    const desc = entry.weather[0].description;
 
     const dayEl = document.createElement("div");
     dayEl.className = "forecast-day";
     dayEl.innerHTML = `
     <span class="f-label">${label}</span>
     <span class="f-temp">${temp}\u00B0C</span>
+    <img src="https://openweathermap.org/img/wn/${iconCode}.png" alt="${desc}" class="f-icon" width="40" height="40">
   `;
     return dayEl;
 }

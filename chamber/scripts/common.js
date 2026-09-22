@@ -8,12 +8,11 @@ if (navToggle && primaryNav) {
         navToggle.setAttribute("aria-expanded", String(isOpen));
     });
 }
-
 // dark mode toggle
 const themeToggle = document.getElementById("theme-toggle");
 
 function setTheme(mode) {
-    const isDark = mode === "dark"
+    const isDark = mode === "dark";
     document.body.classList.toggle("dark-mode", isDark);
     if (themeToggle) themeToggle.setAttribute("aria-pressed", String(isDark));
     localStorage.setItem("theme", mode);
@@ -25,11 +24,10 @@ if (themeToggle) {
         setTheme(nowDark ? "dark" : "light");
     });
 }
-    
+
 setTheme(localStorage.getItem("theme") || "light");
 
 // visit count
-
 function trackVisits() {
     const banner = document.getElementById("visit-banner");
     const textEl = document.getElementById("visit-text");
@@ -71,4 +69,3 @@ const yearEl = document.getElementById("current-year");
 const modEl = document.getElementById("last-modified");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 if (modEl) modEl.textContent = document.lastModified;
-
