@@ -141,7 +141,7 @@ p {
     font-size: 1rem;
     line-height: 1.2;
     letter-spacing: 0.01em;
-    color: var(--clr-secondary);
+    color: var(--clr-primary);
     border-left: 2px solid var(--clr-secondary);
     padding-left: 0.65rem;
     position: relative;
@@ -319,7 +319,7 @@ body:not(.dark-mode) .primary-nav {
     justify-content: center;
     text-align: center;
     padding: 1.25rem 1rem;
-    background-image: linear-gradient(180deg, rgba(14, 37, 33, 0.25) 0%, rgba(14, 37, 33, 0.55) 100%);
+    
 }
 
 .hero-eyebrow {
