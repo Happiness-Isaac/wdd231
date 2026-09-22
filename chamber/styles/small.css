@@ -1,35 +1,21 @@
 :root {
     /* Brand colors */
     --clr-primary: #173b36;
-    /* deep brand green */
     --clr-primary-dark: #0e2521;
-    /* darker green */
     --clr-secondary: #b7791f;
-    /* brand gold */
-    --clr-secondary-text: #925f18;
-    /* darker gold — meets 4.5:1 as TEXT on light backgrounds */
     --clr-gold-bright: #e0a63f;
-    /* bright gold — for text/icons sitting on dark backgrounds only */
     --clr-bg: #f5f7f6;
-    /* page background */
     --clr-surface: #ffffff;
-    /* card surface */
     --clr-text: #1f2933;
-    /* body text */
     --clr-text-light: #f5f7f6;
-    /* text on dark backgrounds */
-    --clr-muted: #5b6770;
-    /* secondary text */
+    --clr-muted: var(--clr-text);
     --clr-border: #dbe1de;
 
     /* Membership badges — darkened slightly from brand gold/silver so pure white badge text passes 4.5:1 */
     --clr-member: #2f6f8f;
-    /* teal-blue — clearly distinct from gold/silver */
     --clr-silver: #73777b;
-    /* true grey silver */
     --clr-gold: #a16b1b;
-    /* brand gold, darkened for badge use */
-
+    
     /* Type */
     --font-display: "Fraunces", Georgia, "Times New Roman", serif;
     --font-body: "Karla", Arial, Helvetica, sans-serif;
@@ -44,7 +30,6 @@ body.dark-mode {
     --clr-bg: #10201d;
     --clr-surface: #1a2f2b;
     --clr-text: #e7ece9;
-    --clr-muted: #a8b6b1;
     --clr-border: #2c4540;
     --clr-primary: #dff0ea;
     /* light ink used where primary was text/icon color */
@@ -77,7 +62,7 @@ img {
 }
 
 a {
-    color: var(--clr-secondary-text);
+    color: var(--clr-gold-bright);
     text-decoration: none;
 }
 
@@ -151,7 +136,7 @@ p {
     font-size: 1rem;
     line-height: 1.2;
     letter-spacing: 0.01em;
-    color: var(--clr-secondary-text);
+    color: var(--clr-gold-bright);
     border-left: 2px solid var(--clr-secondary);
     padding-left: 0.65rem;
     position: relative;
@@ -160,10 +145,6 @@ p {
 
 body.dark-mode .brand-logo {
     filter: brightness(1.45) saturate(1.05);
-}
-
-body.dark-mode .brand-text {
-    color: var(--clr-gold-bright);
 }
 
 .header-actions {
@@ -198,7 +179,7 @@ body.dark-mode .brand-text {
 .theme-toggle:hover,
 .theme-toggle:focus-visible {
     border-color: var(--clr-secondary);
-    color: var(--clr-secondary);
+    color: var(--clr-gold-bright);
 }
 
 .nav-toggle {
@@ -374,7 +355,7 @@ body.dark-mode .visit-banner {
     height: 34px;
     border-radius: 50%;
     background-color: rgba(183, 121, 31, 0.18);
-    color: var(--clr-secondary);
+    color: var(--clr-gold-bright);
     flex-shrink: 0;
 }
 
@@ -384,7 +365,7 @@ body.dark-mode .visit-banner {
 }
 
 .visit-text strong {
-    color: var(--clr-secondary);
+    color: var(--clr-gold-bright);
 }
 
 /* section headings */
@@ -464,7 +445,7 @@ section+section {
 
 .view-toggle button:hover svg,
 .view-toggle button:focus-visible svg {
-    stroke: var(--clr-secondary);
+    stroke: var(--clr-gold-bright);
 }
 
 .view-toggle button[aria-pressed="true"] {
@@ -560,15 +541,10 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
 
 .member-category {
     font-size: 0.78rem;
-    color: var(--clr-secondary-text);
+    color: var(--clr-gold-bright);
     font-weight: 700;
     margin: 0 0 0.15rem;
     transition: color 0.25s ease;
-}
-
-.member-card:hover .member-category,
-.member-card:focus-within .member-category {
-    color: var(--clr-gold-bright);
 }
 
 .badge {
@@ -613,13 +589,8 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.03em;
-    color: var(--clr-secondary-text);
-    margin-bottom: 0.15rem;
-}
-
-.member-card:hover .founded,
-.member-card:focus-within .founded {
     color: var(--clr-gold-bright);
+    margin-bottom: 0.15rem;
 }
 
 .member-card:hover address,
@@ -639,13 +610,8 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
 .member-card-links a {
     font-size: 0.82rem;
     font-weight: 700;
-    color: var(--clr-secondary-text);
-    transition: color 0.25s ease;
-}
-
-.member-card:hover .member-card-links a,
-.member-card:focus-within .member-card-links a {
     color: var(--clr-gold-bright);
+    transition: color 0.25s ease;
 }
 
 /* list view adjustments */
@@ -677,7 +643,7 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
 .events-list {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .event-card {
@@ -687,7 +653,7 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
     border-radius: var(--radius);
     padding: 1rem 1.1rem;
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: flex-start;
 }
 
@@ -881,7 +847,7 @@ body.dark-mode .weather-temp {
 .spotlight-card a {
     font-size: 0.85rem;
     font-weight: 700;
-    color: var(--clr-secondary-text);
+    color: var(--clr-gold-bright);
 }
 
 /* footer*/
