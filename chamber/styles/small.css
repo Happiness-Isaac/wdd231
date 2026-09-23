@@ -258,6 +258,7 @@ p {
     justify-content: center;
     text-align: center;
     padding: 1.25rem 1rem;
+    background-color: rgba(14, 37, 33, 0.55);
 }
 
 .hero-eyebrow {
