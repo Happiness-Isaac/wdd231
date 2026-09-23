@@ -9,9 +9,10 @@
     --clr-gold-bright: #e0a63f;
     --clr-bg: #f5f7f6;
     --clr-footer-bg: #173b36;
+    --clr-badge-silver: #aab2ba;
     --clr-surface: #ffffff;
     --clr-text-light: #f5f7f6;
-    --clr-member: #3660d2;
+    --clr-member: #a4b8ef;
     /* text on dark backgrounds */
     --clr-muted: #5b6770;
     --clr-border: #dbe1de;
@@ -215,10 +216,6 @@ p {
     text-decoration: none;
 }
 
-/* fixed: background was rgba(224,166,63,0.16) — the SAME gold hue as the
-   text color, just translucent, giving ~1:1 contrast. Now uses a solid,
-   unrelated-hue dark background so gold text always has real contrast
-   regardless of how a checker handles alpha compositing. */
 .primary-nav a[aria-current="page"] {
     color: var(--clr-gold-bright);
     background-color: var(--clr-primary-dark);
@@ -261,7 +258,6 @@ p {
     justify-content: center;
     text-align: center;
     padding: 1.25rem 1rem;
-    background-image: linear-gradient(180deg, rgba(14, 37, 33, 0.25) 0%, rgba(14, 37, 33, 0.55) 100%);
 }
 
 .hero-eyebrow {
@@ -366,6 +362,7 @@ main {
 .section-heading h2 {
     font-size: 1.4rem;
     margin: 0;
+    padding-top: 30px;
     color: var(--clr-primary);
 }
 
@@ -553,10 +550,12 @@ body:not(.dark-mode) .member-category {
 
 .badge-member {
     background-color: var(--clr-member);
+    color: var(--clr-primary-dark);
 }
 
 .badge-silver {
-    background-color: var(--clr-muted);
+    background-color: var(--clr-badge-silver);
+    color: var(--clr-primary-dark);
 }
 
 .badge-gold {
@@ -862,7 +861,6 @@ body:not(.dark-mode) .member-category {
 
 body.dark-mode .site-footer {
     border-top: var(--clr-secondary) solid 1px;
-
 }
 
 .footer-bar {
