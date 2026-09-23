@@ -215,9 +215,13 @@ p {
     text-decoration: none;
 }
 
+/* fixed: background was rgba(224,166,63,0.16) — the SAME gold hue as the
+   text color, just translucent, giving ~1:1 contrast. Now uses a solid,
+   unrelated-hue dark background so gold text always has real contrast
+   regardless of how a checker handles alpha compositing. */
 .primary-nav a[aria-current="page"] {
     color: var(--clr-gold-bright);
-    background-color: rgba(224, 166, 63, 0.16);
+    background-color: var(--clr-primary-dark);
     border-radius: 50px;
 }
 
@@ -870,7 +874,7 @@ body.dark-mode .site-footer {
     align-items: center;
     text-align: center;
     gap: 1.75rem;
-    
+
 }
 
 .footer-bar h2 {
