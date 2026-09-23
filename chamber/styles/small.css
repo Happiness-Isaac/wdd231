@@ -1,44 +1,31 @@
 :root {
-    /* Brand colors */
+    /* font */
+    --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+    --font-body: "Karla", Arial, Helvetica, sans-serif;
+    /* brand */
     --clr-primary: #173b36;
     --clr-primary-dark: #0e2521;
     --clr-secondary: #b7791f;
     --clr-gold-bright: #e0a63f;
     --clr-bg: #f5f7f6;
+    --clr-footer-bg: #173b36;
     --clr-surface: #ffffff;
     --clr-text-light: #f5f7f6;
-
+    --clr-member: #3660d2;
     /* text on dark backgrounds */
     --clr-muted: #5b6770;
     --clr-border: #dbe1de;
-    /* Membership badges — now built from the existing brand palette
-       instead of introducing new hues (blue removed, gold de-duplicated) */
-    --clr-member: var(--clr-primary);
-    --clr-silver: var(--clr-muted);
-    --clr-gold: var(--clr-secondary);
-
-    /* Type */
-    --font-display: "Fraunces", Georgia, "Times New Roman", serif;
-    --font-body: "Karla", Arial, Helvetica, sans-serif;
-
     /* Layout */
-    --max-width: 1120px;
+    --max-width: 1400px;
     --radius: 10px;
 }
 
 /* darkmode */
 body.dark-mode {
-    --clr-bg: #10201d;
-    --clr-surface: #1a2f2b;
-    --clr-text: #e7ece9;
-    --clr-muted: #a8b6b1;
-    --clr-border: #2c4540;
-    --clr-primary: #dff0ea;
-    /* light ink used where primary was text/icon color */
-    --clr-primary-dark: #0a1815;
-    /* keep the member badge on brand green even though --clr-primary
-       has been repurposed as light ink in dark mode */
-    --clr-member: #173b36;
+    --clr-bg: #0e2521;
+    --clr-surface: #173b36;
+    --clr-primary: #f5f7f6;
+    --clr-muted: #f5f7f6;
 }
 
 *,
@@ -54,7 +41,7 @@ html {
 body {
     font-family: var(--font-body);
     background-color: var(--clr-bg);
-    color: var(--clr-text);
+    color: var(--clr-primary);
     line-height: 1.55;
     min-width: 320px;
     overflow-x: hidden;
@@ -67,13 +54,8 @@ img {
 }
 
 a {
-    color: var(--clr-secondary);
+    color: var(--clr-primary);
     text-decoration: none;
-}
-
-a:hover,
-a:focus {
-    text-decoration: underline;
 }
 
 h1,
@@ -148,14 +130,6 @@ p {
     top: 20px;
 }
 
-body.dark-mode .brand-logo {
-    filter: brightness(1.45) saturate(1.05);
-}
-
-body.dark-mode .brand-text {
-    color: var(--clr-gold-bright);
-}
-
 .header-actions {
     display: flex;
     align-items: center;
@@ -188,7 +162,6 @@ body.dark-mode .brand-text {
 .theme-toggle:hover,
 .theme-toggle:focus-visible {
     border-color: var(--clr-secondary);
-    color: var(--clr-secondary);
 }
 
 .nav-toggle {
@@ -212,10 +185,6 @@ body.dark-mode .brand-text {
     background-color: var(--clr-primary-dark);
 }
 
-body:not(.dark-mode) .primary-nav {
-    background-color: var(--clr-primary);
-}
-
 .primary-nav.is-open {
     display: block;
 }
@@ -229,14 +198,15 @@ body:not(.dark-mode) .primary-nav {
     margin: 0 auto;
 }
 
+
 .primary-nav a {
     display: block;
     color: var(--clr-text-light);
     padding: 0.7rem 0.25rem;
-
     font-weight: 700;
     font-size: 1rem;
     letter-spacing: 0.02em;
+    text-decoration: none;
 }
 
 .primary-nav a:hover,
@@ -245,52 +215,20 @@ body:not(.dark-mode) .primary-nav {
     text-decoration: none;
 }
 
-/* wayfinding: the current page gets a filled gold pill, not just a color
-   change, so it reads clearly on mobile too (not only the desktop underline) */
 .primary-nav a[aria-current="page"] {
     color: var(--clr-gold-bright);
+    background-color: rgba(224, 166, 63, 0.16);
     border-radius: 50px;
 }
 
-@media screen and (min-width: 700px) {
+.directory-intro h1 {
+    font-size: 1.9rem;
+    margin-bottom: 0.3rem;
+}
 
-    /* header / nav */
-    .header-bar {
-        padding: 1rem 1.5rem;
-    }
-
-    .brand-logo {
-        height: 64px;
-    }
-
-    .brand-text {
-        font-size: 1.1rem;
-        top: 25px;
-    }
-
-    .nav-toggle {
-        display: none;
-    }
-
-    .primary-nav {
-        display: block;
-    }
-
-    .primary-nav ul {
-        flex-direction: row;
-        justify-content: space-evenly;
-        padding: 0 1.5rem;
-        gap: 0.5rem;
-    }
-
-    .primary-nav a {
-        border-bottom: 3px solid transparent;
-        padding: 0.85rem 1rem;
-    }
-
-    .primary-nav a[aria-current="page"] {
-        border-color: var(--clr-gold-bright);
-    }
+.directory-intro p {
+    max-width: 62ch;
+    color: var(--clr-muted);
 }
 
 /* hero */
@@ -319,11 +257,11 @@ body:not(.dark-mode) .primary-nav {
     justify-content: center;
     text-align: center;
     padding: 1.25rem 1rem;
-    
+    background-image: linear-gradient(180deg, rgba(14, 37, 33, 0.25) 0%, rgba(14, 37, 33, 0.55) 100%);
 }
 
 .hero-eyebrow {
-    font-size: 0.8rem;
+    font-size: 1rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--clr-gold-bright);
@@ -346,28 +284,26 @@ body:not(.dark-mode) .primary-nav {
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
 }
 
-/* cta button sitting over the hero image */
+/* cta */
 .hero-cta {
     display: inline-block;
     margin-top: 1.1rem;
-    background-color: var(--clr-secondary);
-    color: #ffffff;
+    background-color: var(--clr-gold-bright);
+    color: var(--clr-primary-dark);
     font-weight: 700;
     font-size: 0.95rem;
     padding: 0.75rem 1.6rem;
     border-radius: 999px;
     text-decoration: none;
     box-shadow: 0 8px 20px rgba(183, 121, 31, 0.35);
-    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hero-cta:hover,
 .hero-cta:focus-visible {
-    background-color: var(--clr-gold-bright);
     transform: translateY(-2px);
     box-shadow: 0 10px 24px rgba(183, 121, 31, 0.45);
     text-decoration: none;
-    color: #173b36;
 }
 
 /* main*/
@@ -377,7 +313,7 @@ main {
     padding: 1.75rem 1rem 3rem;
 }
 
-/* visit counter — shown only on the home page (no #visit-banner markup on other pages) */
+/* visit counter */
 .visit-banner {
     display: flex;
     align-items: center;
@@ -392,10 +328,6 @@ main {
     box-shadow: 0 4px 14px rgba(23, 59, 54, 0.18);
 }
 
-body.dark-mode .visit-banner {
-    background: linear-gradient(135deg, #10302b 0%, #1a4540 100%);
-}
-
 .visit-icon {
     display: inline-flex;
     align-items: center;
@@ -403,8 +335,8 @@ body.dark-mode .visit-banner {
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    background-color: rgba(183, 121, 31, 0.18);
-    color: var(--clr-secondary);
+    background-color: rgba(224, 166, 63, 0.18);
+    color: var(--clr-gold-bright);
     flex-shrink: 0;
 }
 
@@ -414,7 +346,7 @@ body.dark-mode .visit-banner {
 }
 
 .visit-text strong {
-    color: var(--clr-secondary);
+    color: var(--clr-gold-bright);
 }
 
 /* section headings */
@@ -430,7 +362,7 @@ body.dark-mode .visit-banner {
 .section-heading h2 {
     font-size: 1.4rem;
     margin: 0;
-    color: var(--clr-text);
+    color: var(--clr-primary);
 }
 
 .section-heading .section-sub {
@@ -494,17 +426,12 @@ section+section {
 
 .view-toggle button:hover svg,
 .view-toggle button:focus-visible svg {
-    stroke: var(--clr-secondary);
+    stroke: var(--clr-gold-bright);
 }
 
 .view-toggle button[aria-pressed="true"] {
     background-color: var(--clr-primary-dark);
     border-color: var(--clr-primary-dark);
-}
-
-body.dark-mode .view-toggle button[aria-pressed="true"] {
-    background-color: #0a1815;
-    border-color: var(--clr-secondary);
 }
 
 .view-toggle button[aria-pressed="true"] svg {
@@ -536,6 +463,10 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
     height: 100%;
     box-shadow: 0 1px 0 rgba(31, 41, 51, 0.04);
     transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+body.dark-mode .member-card {
+    border: var(--clr-secondary) solid 1px;
 }
 
 .member-card:hover,
@@ -579,7 +510,7 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
 .member-card h2 {
     font-size: 1.05rem;
     margin: 0;
-    color: var(--clr-text);
+    color: var(--clr-primary);
     transition: color 0.25s ease;
 }
 
@@ -590,10 +521,13 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
 
 .member-category {
     font-size: 0.78rem;
-    color: var(--clr-secondary);
+    color: var(--clr-gold-bright);
     font-weight: 700;
     margin: 0 0 0.15rem;
-    transition: color 0.25s ease;
+}
+
+body:not(.dark-mode) .member-category {
+    color: var(--clr-primary);
 }
 
 .member-card:hover .member-category,
@@ -618,11 +552,12 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
 }
 
 .badge-silver {
-    background-color: var(--clr-silver);
+    background-color: var(--clr-muted);
 }
 
 .badge-gold {
-    background-color: var(--clr-gold);
+    background-color: var(--clr-gold-bright);
+    color: var(--clr-primary-dark);
 }
 
 .member-card address,
@@ -630,7 +565,7 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
     font-style: normal;
     font-size: 0.88rem;
     margin: 0;
-    color: var(--clr-text);
+    color: var(--clr-primary);
     transition: color 0.25s ease;
 }
 
@@ -643,7 +578,7 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.03em;
-    color: var(--clr-secondary);
+    color: var(--clr-primary);
     margin-bottom: 0.15rem;
 }
 
@@ -669,7 +604,8 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
 .member-card-links a {
     font-size: 0.82rem;
     font-weight: 700;
-    color: var(--clr-secondary);
+    color: var(--clr-primary);
+    text-decoration: none;
     transition: color 0.25s ease;
 }
 
@@ -751,6 +687,7 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
 .event-info h3 {
     font-size: 1rem;
     margin: 0 0 0.2rem;
+    color: var(--clr-primary);
 }
 
 .event-info p {
@@ -791,10 +728,6 @@ body.dark-mode .view-toggle button[aria-pressed="true"] {
     line-height: 1;
 }
 
-body.dark-mode .weather-temp {
-    color: var(--clr-text);
-}
-
 .weather-details {
     display: flex;
     flex-direction: column;
@@ -804,6 +737,7 @@ body.dark-mode .weather-temp {
 .weather-desc {
     font-weight: 700;
     text-transform: capitalize;
+    color: var(--clr-primary);
 }
 
 .weather-location {
@@ -845,7 +779,7 @@ body.dark-mode .weather-temp {
     display: block;
     font-weight: 700;
     font-size: 1rem;
-    color: var(--clr-text);
+    color: var(--clr-primary);
 }
 
 .weather-loading,
@@ -898,6 +832,7 @@ body.dark-mode .weather-temp {
 .spotlight-name h3 {
     font-size: 1rem;
     margin: 0;
+    color: var(--clr-primary);
 }
 
 .spotlight-card address,
@@ -911,17 +846,19 @@ body.dark-mode .weather-temp {
 .spotlight-card a {
     font-size: 0.85rem;
     font-weight: 700;
-    color: var(--clr-secondary);
+    color: var(--clr-primary);
+    text-decoration: none;
 }
 
-/* footer*/
+/* footer */
 .site-footer {
-    background-color: var(--clr-primary);
+    background-color: var(--clr-footer-bg);
     color: var(--clr-text-light);
 }
 
 body.dark-mode .site-footer {
-    background-color: #0a1815;
+    border-top: var(--clr-secondary) solid 1px;
+
 }
 
 .footer-bar {
@@ -933,6 +870,7 @@ body.dark-mode .site-footer {
     align-items: center;
     text-align: center;
     gap: 1.75rem;
+    
 }
 
 .footer-bar h2 {
@@ -979,7 +917,7 @@ body.dark-mode .site-footer {
 .footer-social a:focus-visible {
     background-color: var(--clr-secondary);
     border-color: var(--clr-secondary);
-    color: var(--clr-primary);
+    color: var(--clr-primary-dark);
     transform: translateY(-3px);
     text-decoration: none;
 }

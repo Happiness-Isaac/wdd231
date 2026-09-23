@@ -23,6 +23,7 @@ async function getCurrentWeather() {
 
     tempEl.textContent = `${Math.round(data.main.temp)}\u00B0C`;
     descEl.textContent = data.weather[0].description;
+
     const iconCode = data.weather[0].icon;
     iconEl.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
     iconEl.alt = data.weather[0].description;
@@ -59,8 +60,8 @@ function buildForecastDay(entry) {
     dayEl.className = "forecast-day";
     dayEl.innerHTML = `
     <span class="f-label">${label}</span>
-    <span class="f-temp">${temp}\u00B0C</span>
     <img src="https://openweathermap.org/img/wn/${iconCode}.png" alt="${desc}" class="f-icon" width="40" height="40">
+    <span class="f-temp">${temp}\u00B0C</span>
   `;
     return dayEl;
 }
