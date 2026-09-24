@@ -269,12 +269,17 @@ p {
 
 .cta-link {
     display: inline-block;
-    background: var(--clr-secondary);
-    color: var(--clr-primary-dark);
+    background: var(--clr-primary-dark);
+    color: var(--clr-text-light);
     text-decoration: underline;
     font-weight: 700;
     padding: 0.6rem 1.1rem;
     border-radius: var(--radius);
+    outline: 0.5px solid var(--clr-secondary);
+}
+
+.cta-link:hover{
+    transform: translateY(4px);
 }
 
 /* main*/
