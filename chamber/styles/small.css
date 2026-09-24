@@ -172,7 +172,7 @@ p {
     display: block;
     width: 20px;
     height: 2px;
-    background-color: var(--clr-primary);
+    background-color: var(--clr-secondary);
 }
 
 /* green bar nav */
