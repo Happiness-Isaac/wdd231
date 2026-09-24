@@ -34,24 +34,20 @@
     }
 
     /* hero*/
-    .hero-image {
-        height: 400px;
+    .hero {
+        min-height: 360px;
     }
 
-    .hero-overlay h1 {
-        font-size: 3rem;
-    }
-
-    .hero-lead {
-        font-size: 1.05rem;
+    .hero-image{
+        min-height: 360px;
+        max-height: 480px;
     }
 
     .hero-cta {
-        font-size: 1.05rem;
-        padding: 0.85rem 2rem;
+        inset: auto auto 1.5rem 1.5rem
     }
 
-    /*main*/
+    /*main*/ 
     main {
         padding: 2.5rem 1.5rem 4rem;
     }

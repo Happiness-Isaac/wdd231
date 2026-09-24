@@ -231,75 +231,50 @@ p {
 /* hero */
 .hero {
     position: relative;
-    isolation: isolate;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    margin-top: -1.75rem;
-    margin-bottom: 1.75rem;
+    width: 100%;
+    min-height: 280px;
+    overflow: hidden;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
 }
 
 .hero-image {
     width: 100%;
-    height: 300px;
+    height: 100%;
+    min-height: 280px;
+    max-height: 420px;
     object-fit: cover;
+    display: block;
 }
 
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 1.25rem 1rem;
-    background-color: rgba(14, 37, 33, 0.55);
-}
-
-.hero-eyebrow {
-    font-size: 1rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--clr-gold-bright);
-    font-weight: 800;
-    margin: 0 0 0.4rem;
-}
-
-.hero-overlay h1 {
-    color: var(--clr-text-light);
-    font-size: 2rem;
-    margin: 0 0 0.5rem;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-}
-
-.hero-lead {
-    color: rgba(255, 255, 255, 0.94);
-    max-width: 60ch;
-    margin: 0;
-    font-size: 0.95rem;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
-}
-
-/* cta */
 .hero-cta {
-    display: inline-block;
-    margin-top: 1.1rem;
-    background-color: var(--clr-gold-bright);
-    color: var(--clr-primary-dark);
-    font-weight: 700;
-    font-size: 0.95rem;
-    padding: 0.75rem 1.6rem;
-    border-radius: 999px;
-    text-decoration: none;
-    box-shadow: 0 8px 20px rgba(183, 121, 31, 0.35);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: absolute;
+    background: rgba(15, 42, 32, 0.78);;
+    inset: auto 1rem 1rem 1rem;
+    color: var(--clr-text-light);
+    padding: 1rem 1.25rem;
+    max-width: 28rem;
 }
 
-.hero-cta:hover,
-.hero-cta:focus-visible {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(183, 121, 31, 0.45);
+.hero-cta h1 {
+    margin: 0 0 0.35rem;
+    font-size: 1.5rem;
+}
+
+.hero-cta p {
+    margin: 0 0 0.85rem;
+    font-size: 0.93rem;
+    line-height: 1.4;
+}
+
+.cta-link {
+    display: inline-block;
+    background: var(--clr-secondary);
+    color: var(--clr-text-light);
+    text-decoration: underline;
+    font-weight: 700;
+    padding: 0.6rem 1.1rem;
+    border-radius: var(--radius);
 }
 
 /* main*/
