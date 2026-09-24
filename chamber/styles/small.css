@@ -8,7 +8,6 @@
     --clr-secondary: #b7791f;
     --clr-gold-bright: #e0a63f;
     --clr-bg: #f5f7f6;
-    --clr-footer-bg: #173b36;
     --clr-badge-silver: #aab2ba;
     --clr-surface: #ffffff;
     --clr-text-light: #f5f7f6;
@@ -108,10 +107,6 @@ p {
     gap: 0.65rem;
 }
 
-.brand:hover,
-.brand:focus {
-    text-decoration: none;
-}
 
 .brand-logo {
     height: 50px;
@@ -208,18 +203,19 @@ p {
     font-size: 1rem;
     letter-spacing: 0.02em;
     text-decoration: none;
+    border-bottom: 2px solid transparent;
 }
 
 .primary-nav a:hover,
 .primary-nav a:focus {
     color: var(--clr-gold-bright);
-    text-decoration: none;
 }
 
 .primary-nav a[aria-current="page"] {
     color: var(--clr-gold-bright);
-    background-color: var(--clr-primary-dark);
     border-radius: 50px;
+    border-color: var(--clr-gold-bright);
+    background-color: var(--clr-primary-dark);
 }
 
 .directory-intro h1 {
@@ -304,7 +300,6 @@ p {
 .hero-cta:focus-visible {
     transform: translateY(-2px);
     box-shadow: 0 10px 24px rgba(183, 121, 31, 0.45);
-    text-decoration: none;
 }
 
 /* main*/
@@ -543,7 +538,6 @@ body:not(.dark-mode) .member-category {
     font-weight: 700;
     padding: 0.2rem 0.55rem;
     border-radius: 999px;
-    color: #ffffff;
     white-space: nowrap;
     flex-shrink: 0;
     letter-spacing: 0.02em;
@@ -856,7 +850,7 @@ body:not(.dark-mode) .member-category {
 
 /* footer */
 .site-footer {
-    background-color: var(--clr-footer-bg);
+    background-color: var(--clr-primary-dark);
     color: var(--clr-text-light);
 }
 
@@ -922,5 +916,4 @@ body.dark-mode .site-footer {
     border-color: var(--clr-secondary);
     color: var(--clr-primary-dark);
     transform: translateY(-3px);
-    text-decoration: none;
 }

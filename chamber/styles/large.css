@@ -30,12 +30,7 @@
     }
 
     .primary-nav a {
-        border-bottom: 3px solid transparent;
         padding: 0.85rem 1rem;
-    }
-
-    .primary-nav a[aria-current="page"] {
-        border-color: var(--clr-gold-bright);
     }
 
     /* hero*/
