@@ -1,0 +1,13 @@
+PROJECT SUBJECT: 
+For my website project i will be building a site call FILMQUEE, this website 
+will allow users to browse and queue movies they would love to watch.
+
+PROJECT DESCRIPTION:
+FILMQUEE pulls live data from movie/tv databse API to enable users browsw film by genre, 
+view ratings and description and and save to to personal watch queue.
+
+PROJECT REASON AND PURPOSE:
+I choose this because i am genuinely intrested in movies, and sometimes i regularly lose 
+track of movies and shows i mean to watch. and i believe this is a good one because its a 
+strong technical fit since the API provides rich, filtered data perfect for my project dynamic 
+content and storage requirement
