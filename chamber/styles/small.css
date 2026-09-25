@@ -83,6 +83,9 @@ p {
     overflow: hidden;
     clip: rect(0 0 0 0);
     white-space: nowrap;
+    border: 0;
+    color: #000;
+    background-color: #fff;
 }
 
 /* header*/
@@ -138,7 +141,7 @@ p {
     border: 1.5px solid var(--clr-primary);
     border-radius: var(--radius);
     cursor: pointer;
-   
+    color: var(--clr-primary);
     display: flex;
     align-items: center;
     justify-content: center;
