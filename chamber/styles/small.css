@@ -138,7 +138,7 @@ p {
     border: 1.5px solid var(--clr-primary);
     border-radius: var(--radius);
     cursor: pointer;
-    color: var(--clr-primary);
+   
     display: flex;
     align-items: center;
     justify-content: center;
