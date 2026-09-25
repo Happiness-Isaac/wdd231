@@ -1,4 +1,4 @@
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 768px) {
 
     /* header / nav */
     .header-bar {
@@ -100,10 +100,6 @@
 }
 
 @media screen and (min-width: 980px) {
-    .hero-image {
-        height: 460px;
-    }
-
     #member-list {
         grid-template-columns: repeat(3, 1fr);
     }
