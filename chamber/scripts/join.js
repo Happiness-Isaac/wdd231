@@ -6,7 +6,6 @@ joinForm?.addEventListener('submit', () => {
     }
 });
 
-
 const openButtons = document.querySelectorAll('.learn-more');
 const closeButtons = document.querySelectorAll('.close-modal');
 
@@ -46,8 +45,7 @@ if (applicationSummary) {
         email: 'show-email',
         phone: 'show-phone',
         organization: 'show-organization',
-        timestamp: 'show-timestamp', 
-        orgtitile: 'show-orgtitle',
+        orgtitle: 'show-orgtitle',
         description: 'show-description',
         membership: 'show-membership',
         timestamp: 'show-timestamp'

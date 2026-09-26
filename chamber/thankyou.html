@@ -2,50 +2,75 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appliction Received | Lekki Business Chamber of Commerce </title>
+    <meta name="description" content="Confirmation of a submitted Lekki Business Chamber of Commerce membership application.">
+    <meta name="author" content="Happiness Isaac">
+    
     <link rel="icon" href="images/favicon.ico">
-    <title>Thank You | Waxahachie Chamber of Commerce</title>
-    <meta name="description" content="Thank you for applying to join the Waxahachie Chamber of Commerce.">
-    <meta name="author" content="Michael Wiseman">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/chamber.css">
-    <link rel="stylesheet" href="styles/join.css">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <meta property="og:title" content="Application Received | Lekki Business Chamber of Commerce">
+    <meta property="og:description" content="Confirmation of a submitted Lekki Business Chamber of Commerce membership application.">
+    <meta property="og:url" content="https://happiness-isaac.github.io/wdd231/thankyou.html">
+    <meta property="og:image" content="https://happiness-isaac.github.io/wdd231/chamber/images/logo.webp">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <meta property="og:title" content="Thank You | Waxahachie Chamber of Commerce">
-    <meta property="og:description" content="Thank you for applying to join the Waxahachie Chamber of Commerce.">
-    <meta property="og:url" content="https://mcwiseman97.github.io/wdd231/chamber/thankyou.html">
-    <meta property="og:image" content="images/profile.jpg">
-    <script src="scripts/chamber.js" defer></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/join.css">
+    
+    <script src="scripts/common.js" defer></script>
     <script src="scripts/join.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo-section">
-                <img src="images/apple-touch-icon.png" alt="Chamber Logo" class="logo">
-                <h1>Waxahachie Chamber of Commerce</h1>
+    <header class="site-header">
+        <div class="header-bar">
+            <a href="#" class="brand">
+                <img src="images/logo.webp" alt="Lekki Business Chamber of Commerce logo" class="brand-logo" width="430"
+                    height="240">
+                <span class="brand-text">CHAMBER OF COMMERCE</span>
+            </a>
+    
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-pressed="false" title="Toggle dark mode">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+                        <path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"></path>
+                    </svg>
+                    <span class="visually-hidden">Toggle dark mode</span>
+                </button>
+    
+                <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+                    <span class="visually-hidden">Menu</span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <button id="darkModeToggle" class="dark-mode-btn" type="button" aria-label="Toggle dark mode">◐</button>
-            <button id="hamburger" class="hamburger" type="button" aria-label="Open navigation menu">☰</button>
-            <nav id="navMenu" class="nav-menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="directory.html">Directory</a></li>
-                    <li><a href="join.html" class="active">Join</a></li>
-                    <li><a href="discover.html">Discover</a></li>
-                </ul>
-            </nav>
         </div>
+        <nav id="primary-nav" class="primary-nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="#">Discover</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="thankyou-main">
-        <h2>Thank You!</h2>
-        <p class="join-intro">Your membership application has been received. Here is a summary of your submission:</p>
+        <div class="join-intro">
+            <h1>Thank You!</h1>
+            <p>Your membership application has been received. Here is a summary of your submission:</p>
+        </div>
 
         <section class="thankyou-summary" aria-label="Application summary">
             <dl id="applicationSummary">
@@ -70,6 +95,18 @@
                     <dd id="show-organization"></dd>
                 </div>
                 <div>
+                    <dt>Organizational Title</dt>
+                    <dd id="show-orgtitle"></dd>
+                </div>
+                <div>
+                    <dt>Business Description</dt>
+                    <dd id="show-description"></dd>
+                </div>
+                <div>
+                    <dt>Membership Level</dt>
+                    <dd id="show-membership"></dd>
+                </div>
+                <div>
                     <dt>Application Submitted</dt>
                     <dd id="show-timestamp"></dd>
                 </div>
@@ -78,21 +115,42 @@
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Waxahachie Chamber of Commerce</h3>
-                <p>604 N Hwy 77<br>Waxahachie, TX 75165</p>
-                <p>info@waxahachiechamber.com<br>(972) 937-2310</p>
+    <footer class="site-footer">
+        <div class="footer-bar">
+            <div class="footer-contact">
+                <h2>Lekki Business Chamber of Commerce</h2>
+                <p>14 Admiralty Way, Lekki Penninsula 1</p>
+                <p>Lagos, Nigeria</p>
+                <p>info@lekkichamber.org</p>
+                <p>+(234) 708 786 9355</p>
             </div>
-            <div class="footer-section social">
-                <a href="#" class="social-icon"><img src="images/github.png" alt="GitHub"></a>
-                <a href="#" class="social-icon"><img src="images/twitter.png" alt="Twitter"></a>
-                <a href="#" class="social-icon"><img src="images/linkedin.png" alt="LinkedIn"></a>
+    
+            <div class="footer-social">
+                <a href="https://github.com/happiness-isaac" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path
+                            d="M12 2C6.48 2 2 6.58 2 12.19c0 4.49 2.87 8.3 6.84 9.65.5.1.68-.22.68-.49 0-.24-.01-1.03-.01-1.87-2.78.61-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.49-1.11-1.49-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.94-2.35 4.8-4.58 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.19C22 6.58 17.52 2 12 2z" />
+                    </svg>
+                </a>
+                <a href="https://x.com" target="_blank" rel="noopener" aria-label="X">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path
+                            d="M18.24 3H21l-6.6 7.54L22.2 21h-6.2l-4.86-6.36L5.5 21H2.72l7.07-8.08L2 3h6.34l4.4 5.82L18.24 3zm-1.08 16.17h1.72L7.9 4.73H6.06l11.1 14.44z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/hbisaac/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path
+                            d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11H3zM10 9.5h3.8v1.5h.05c.53-.95 1.83-1.95 3.75-1.95 4 0 4.75 2.5 4.75 5.8v5.65h-4v-5c0-1.2-.02-2.75-1.75-2.75s-2 1.3-2 2.65v5.1h-4z" />
+                    </svg>
+                </a>
             </div>
-            <div class="footer-section">
-                <p><strong>WDD231 Class Project</strong><br>Michael Wiseman</p>
-                <p>© 2026 Waxahachie Chamber of Commerce<br>Last Modified: <span id="lastModified"></span></p>
+    
+            <div class="footer-dev">
+                <h2>WDD 231 Class Project</h2>
+                <p>Happiness B. Isaac</p>
+                <p>&copy; <span id="current-year"></span> Lekki Business Chamber of Commerce</p>
+                <p>Last Modification: <span id="last-modified"></span></p>
             </div>
         </div>
     </footer>
