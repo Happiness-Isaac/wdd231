@@ -13,7 +13,7 @@
     
     <meta property="og:title" content="Join | Lekki Business Chamber of Commerce">
     <meta property="og:description" content="Apply for Lekki Business Chamber of Commerce membership">
-    <meta property="og:image" content="">
+    <meta property="og:url" content="https://happiness-isaac.github.io/wdd231/join.html">
     <meta property="og:url" content="">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,8 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/large.css">
+    <link rel="stylesheet" href="styles/join.css">
     
     <script src="scripts/common.js" defer></script>
     <script src="scripts/join.js" defer></script>
@@ -31,7 +30,7 @@
 <body>
     <header class="site-header">
         <div class="header-bar">
-            <a href="index.html" class="brand">
+            <a href="#" class="brand">
                 <img src="images/logo.webp" alt="Lekki Business Chamber of Commerce logo" class="brand-logo" width="430"
                     height="240">
                 <span class="brand-text">CHAMBER OF COMMERCE</span>
@@ -56,16 +55,196 @@
         </div>
         <nav id="primary-nav" class="primary-nav">
             <ul>
-                <li><a href="index.html" aria-current="page">Home</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html" class="active">Join</a></li>
-                <li><a href="discover.html">Discover</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Directory</a></li>
+                <li><a href="join.html" aria-current="page">Join</a></li>
+                <li><a href="#">Discover</a></li>
             </ul>
         </nav>
     </header>
-    <h2>Join the Chamber</h2>
-    <p class="join-intro">Complete the application below to become a member of Lekki Business Chamber of Commerce.</p>
 
+    <main>
+        <div class="join-intro">
+            <h1>Join the Chamber</h1>
+            <p>Complete the application below to become a member of the Lekki Business Chamber of Commerce.</p>
+        </div>
+        <div class="join-layout">
+            <form id="joinForm" method="get" action="thankyou.html">
+                <fieldset>
+                    <legend>Applicant Information</legend>
+        
+                    <label for="fname">First Name*</label>
+                    <input type="text" id="fname" name="fname" title="Please enter your first name" autocomplete="given-name"
+                        required>
+        
+                    <label for="lname">Last Name*</label>
+                    <input type="text" id="lname" name="lname" title="Please enter your last name" autocomplete="family-name"
+                        required>
+        
+                    <label for="orgtitle">Organizational Title*</label>
+                    <input type="text" id="orgtitle" name="orgtitle"
+                        title="Title must be at least 7 characters using letters, hyphens, and spaces only"
+                        autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" required>
+        
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email" title="Please enter a valid email address" autocomplete="email"
+                        placeholder="name@example.com" required>
+        
+                    <label for="phone">Mobile Phone*</label>
+                    <input type="tel" id="phone" name="phone" title="Please enter your mobile phone number" autocomplete="tel"
+                        required>
+        
+                    <label for="organization">Business / Organization Name*</label>
+                    <input type="text" id="organization" name="organization"
+                        title="Please enter your business or organization name" autocomplete="organization" required>
+        
+                    <label for="description">Business Description</label>
+                    <textarea id="description" name="description" title="Optional description of your business"
+                        rows="4"></textarea>
+                </fieldset>
+        
+                <fieldset class="membership-fieldset">
+                    <legend>Membership Level*</legend>
+        
+                    <label class="radio-option">
+                        <input type="radio" name="membership" value="np" title="Non-profit membership level" required>
+                        NP Membership
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="membership" value="bronze" title="Bronze membership level">
+                        Bronze Membership
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="membership" value="silver" title="Silver membership level">
+                        Silver Membership
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="membership" value="gold" title="Gold membership level">
+                        Gold Membership
+                    </label>
+                </fieldset>
+        
+                <input type="hidden" id="timestamp" name="timestamp" value="">
+        
+                <button type="submit">Submit Application</button>
+            </form>
+        
+            <aside class="membership-cards" aria-label="Membership level details">
+                <article class="membership-card" id="npMembership">
+                    <h3>NP Membership</h3>
+                    <p>For non-profit organizations. No membership fee.</p>
+                    <button type="button" class="learn-more" data-modal="npModal">Learn More</button>
+                </article>
+        
+                <article class="membership-card" id="bronzeMembership">
+                    <h3>Bronze Membership</h3>
+                    <p>Great starting point for small local businesses.</p>
+                    <button type="button" class="learn-more" data-modal="bronzeModal">Learn More</button>
+                </article>
+        
+                <article class="membership-card" id="silverMembership">
+                    <h3>Silver Membership</h3>
+                    <p>Expanded visibility and member event benefits.</p>
+                    <button type="button" class="learn-more" data-modal="silverModal">Learn More</button>
+                </article>
+        
+                <article class="membership-card" id="goldMembership">
+                    <h3>Gold Membership</h3>
+                    <p>Premium exposure and priority chamber opportunities.</p>
+                    <button type="button" class="learn-more" data-modal="goldModal">Learn More</button>
+                </article>
+            </aside>
+        </div>
+        
+        <dialog id="npModal" class="membership-modal">
+            <h3>NP Membership Benefits</h3>
+            <p><strong>Cost:</strong> Free for qualifying non-profits</p>
+            <ul>
+                <li>Directory listing</li>
+                <li>Access to networking events</li>
+                <li>Community partnership opportunities</li>
+                <li>Chamber newsletter subscription</li>
+            </ul>
+            <button type="button" class="close-modal">Close</button>
+        </dialog>
+        
+        <dialog id="bronzeModal" class="membership-modal">
+            <h3>Bronze Membership Benefits</h3>
+            <p><strong>Cost:</strong> $150 / year</p>
+            <ul>
+                <li>Directory listing with logo</li>
+                <li>Member-rate event tickets</li>
+                <li>Access to training workshops</li>
+                <li>Chamber newsletter subscription</li>
+            </ul>
+            <button type="button" class="close-modal">Close</button>
+        </dialog>
+        
+        <dialog id="silverModal" class="membership-modal">
+            <h3>Silver Membership Benefits</h3>
+            <p><strong>Cost:</strong> $300 / year</p>
+            <ul>
+                <li>Enhanced directory listing</li>
+                <li>Event discounts for staff</li>
+                <li>Quarterly advertising opportunities</li>
+                <li>Invitation to member-only mixers</li>
+            </ul>
+            <button type="button" class="close-modal">Close</button>
+        </dialog>
+        
+        <dialog id="goldModal" class="membership-modal">
+            <h3>Gold Membership Benefits</h3>
+            <p><strong>Cost:</strong> $500 / year</p>
+            <ul>
+                <li>Premium directory placement</li>
+                <li>Home page spotlight eligibility</li>
+                <li>Priority event sponsorship options</li>
+                <li>Complimentary training seats</li>
+                <li>Ribbon cutting support</li>
+            </ul>
+            <button type="button" class="close-modal">Close</button>
+        </dialog>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bar">
+            <div class="footer-contact">
+                <h2>Lekki Business Chamber of Commerce</h2>
+                <p>14 Admiralty Way, Lekki Penninsula 1</p>
+                <p>Lagos, Nigeria</p>
+                <p>info@lekkichamber.org</p>
+                <p>+(234) 708 786 9355</p>
+            </div>
+    
+            <div class="footer-social">
+                <a href="https://github.com/happiness-isaac" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path
+                            d="M12 2C6.48 2 2 6.58 2 12.19c0 4.49 2.87 8.3 6.84 9.65.5.1.68-.22.68-.49 0-.24-.01-1.03-.01-1.87-2.78.61-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.49-1.11-1.49-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.94-2.35 4.8-4.58 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.19C22 6.58 17.52 2 12 2z" />
+                    </svg>
+                </a>
+                <a href="https://x.com" target="_blank" rel="noopener" aria-label="X">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path
+                            d="M18.24 3H21l-6.6 7.54L22.2 21h-6.2l-4.86-6.36L5.5 21H2.72l7.07-8.08L2 3h6.34l4.4 5.82L18.24 3zm-1.08 16.17h1.72L7.9 4.73H6.06l11.1 14.44z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/hbisaac/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path
+                            d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4v11H3zM10 9.5h3.8v1.5h.05c.53-.95 1.83-1.95 3.75-1.95 4 0 4.75 2.5 4.75 5.8v5.65h-4v-5c0-1.2-.02-2.75-1.75-2.75s-2 1.3-2 2.65v5.1h-4z" />
+                    </svg>
+                </a>
+            </div>
+    
+            <div class="footer-dev">
+                <h2>WDD 231 Class Project</h2>
+                <p>Happiness B. Isaac</p>
+                <p>&copy; <span id="current-year"></span> Lekki Business Chamber of Commerce</p>
+                <p>Last Modification: <span id="last-modified"></span></p>
+            </div>
+        </div>
+    </footer>
 </body>
-
 </html>

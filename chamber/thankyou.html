@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/favicon.ico">
+    <title>Thank You | Waxahachie Chamber of Commerce</title>
+    <meta name="description" content="Thank you for applying to join the Waxahachie Chamber of Commerce.">
+    <meta name="author" content="Michael Wiseman">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/chamber.css">
+    <link rel="stylesheet" href="styles/join.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta property="og:title" content="Thank You | Waxahachie Chamber of Commerce">
+    <meta property="og:description" content="Thank you for applying to join the Waxahachie Chamber of Commerce.">
+    <meta property="og:url" content="https://mcwiseman97.github.io/wdd231/chamber/thankyou.html">
+    <meta property="og:image" content="images/profile.jpg">
+    <script src="scripts/chamber.js" defer></script>
+    <script src="scripts/join.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="images/apple-touch-icon.png" alt="Chamber Logo" class="logo">
+                <h1>Waxahachie Chamber of Commerce</h1>
+            </div>
+            <button id="darkModeToggle" class="dark-mode-btn" type="button" aria-label="Toggle dark mode">◐</button>
+            <button id="hamburger" class="hamburger" type="button" aria-label="Open navigation menu">☰</button>
+            <nav id="navMenu" class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html" class="active">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="thankyou-main">
+        <h2>Thank You!</h2>
+        <p class="join-intro">Your membership application has been received. Here is a summary of your submission:</p>
+
+        <section class="thankyou-summary" aria-label="Application summary">
+            <dl id="applicationSummary">
+                <div>
+                    <dt>First Name</dt>
+                    <dd id="show-fname"></dd>
+                </div>
+                <div>
+                    <dt>Last Name</dt>
+                    <dd id="show-lname"></dd>
+                </div>
+                <div>
+                    <dt>Email</dt>
+                    <dd id="show-email"></dd>
+                </div>
+                <div>
+                    <dt>Mobile Phone</dt>
+                    <dd id="show-phone"></dd>
+                </div>
+                <div>
+                    <dt>Business / Organization Name</dt>
+                    <dd id="show-organization"></dd>
+                </div>
+                <div>
+                    <dt>Application Submitted</dt>
+                    <dd id="show-timestamp"></dd>
+                </div>
+            </dl>
+            <p><a class="cta-link" href="join.html">Return to Join Page</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Waxahachie Chamber of Commerce</h3>
+                <p>604 N Hwy 77<br>Waxahachie, TX 75165</p>
+                <p>info@waxahachiechamber.com<br>(972) 937-2310</p>
+            </div>
+            <div class="footer-section social">
+                <a href="#" class="social-icon"><img src="images/github.png" alt="GitHub"></a>
+                <a href="#" class="social-icon"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#" class="social-icon"><img src="images/linkedin.png" alt="LinkedIn"></a>
+            </div>
+            <div class="footer-section">
+                <p><strong>WDD231 Class Project</strong><br>Michael Wiseman</p>
+                <p>© 2026 Waxahachie Chamber of Commerce<br>Last Modified: <span id="lastModified"></span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
