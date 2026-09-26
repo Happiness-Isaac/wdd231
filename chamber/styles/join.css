@@ -336,9 +336,9 @@ main {
     }
 }
 
-.membership-card h3 {
+.membership-card h2 {
     margin: 0 0 0.75rem;
-    font-size: 1.30rem;
+    font-size: 1.25rem;
 }
 
 .membership-card p {
@@ -464,14 +464,6 @@ body.dark-mode .site-footer {
     border-top: var(--clr-secondary) solid 1px;
 }
 
-.site-footer {
-    background-color: var(--clr-primary-dark);
-    color: var(--clr-text-light);
-}
-
-body.dark-mode .site-footer {
-    border-top: var(--clr-secondary) solid 1px;
-}
 
 .footer-bar {
     max-width: var(--max-width);
