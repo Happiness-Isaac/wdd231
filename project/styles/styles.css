@@ -4,8 +4,8 @@ body {
     max-width: 60rem;
     font-family: "Roboto", sans-serif;
     line-height: 1.6;
-    background-color: #141414;
-    color: #ffffff;
+    background-color: #FFFFFF;
+    color: #141414;
     min-height: 100vh;
 }
 
@@ -21,8 +21,9 @@ h3 {
 }
 
 .site-header img {
-    max-width: 5rem;
+    max-width: 10rem;
     height: auto;
+    border-radius: 2.5rem;
 }
 
 h1 {
@@ -54,8 +55,6 @@ td {
     display: inline-block;
     width: 2rem;
     height: 1.25rem;
-    border: 1px solid #ffffff;
-    /* white border so the charcoal swatch is visible */
 }
 
 .swatch-charcoal {
@@ -68,6 +67,7 @@ td {
 
 .swatch-white {
     background-color: #ffffff;
+    border: #141414 1px solid;
 }
 
 .wireframe {
@@ -86,6 +86,7 @@ td {
     margin-bottom: 0.5rem;
     text-align: center;
     background-color: #e50914;
+    color: #FFFFFF;
 }
 
 .wireframe-card {
