@@ -392,7 +392,6 @@ main {
     font-style: normal;
     font-size: 0.9rem;
     line-height: 1.35;
-    color: var(--clr-muted);
 }
 
 .discover-card p {

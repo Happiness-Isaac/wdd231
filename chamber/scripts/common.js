@@ -9,8 +9,6 @@ if (navToggle && primaryNav) {
     });
 }
 
-// dark mode
-
 
 // visit count (home page banner)
 function trackVisits() {
