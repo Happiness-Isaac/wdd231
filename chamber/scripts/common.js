@@ -9,41 +9,46 @@ if (navToggle && primaryNav) {
     });
 }
 
+// dark mode
 
 
-// visit count
+// visit count (home page banner)
 function trackVisits() {
     const banner = document.getElementById("visit-banner");
     const textEl = document.getElementById("visit-text");
     if (!banner || !textEl) return;
 
-    const storedCount = Number(localStorage.getItem("visitCount")) || 0;
-    const lastVisit = localStorage.getItem("lastVisit");
-    const newCount = storedCount + 1;
+    try {
+        const storedCount = Number(localStorage.getItem("visitCount")) || 0;
+        const lastVisit = localStorage.getItem("lastVisit");
+        const newCount = storedCount + 1;
 
-    if (newCount === 1) {
-        textEl.innerHTML =
-            "Welcome to the Lekki Business Chamber. <strong>This is your first visit</strong> — take a look around.";
-    } else {
-        const days = lastVisit
-            ? Math.floor((Date.now() - Number(lastVisit)) / 86400000)
-            : null;
+        if (newCount === 1) {
+            textEl.innerHTML =
+                "Welcome to the Lekki Business Chamber. <strong>This is your first visit</strong> — take a look around.";
+        } else {
+            const days = lastVisit
+                ? Math.floor((Date.now() - Number(lastVisit)) / 86400000)
+                : null;
 
-        let gap = "";
-        if (days === 0) {
-            gap = " You were last here earlier today.";
-        } else if (days === 1) {
-            gap = " You were last here yesterday.";
-        } else if (days > 1) {
-            gap = ` It has been ${days} days since your last visit.`;
+            let gap = "";
+            if (days === 0) {
+                gap = " You were last here earlier today.";
+            } else if (days === 1) {
+                gap = " You were last here yesterday.";
+            } else if (days > 1) {
+                gap = ` It has been ${days} days since your last visit.`;
+            }
+
+            textEl.innerHTML = `Welcome back! This is visit number <strong>${newCount}</strong>.${gap}`;
         }
 
-        textEl.innerHTML = `Welcome back! This is visit number <strong>${newCount}</strong>.${gap}`;
+        localStorage.setItem("visitCount", String(newCount));
+        localStorage.setItem("lastVisit", String(Date.now()));
+        banner.hidden = false;
+    } catch (error) {
+        
     }
-
-    localStorage.setItem("visitCount", String(newCount));
-    localStorage.setItem("lastVisit", String(Date.now()));
-    banner.hidden = false;
 }
 
 trackVisits();
