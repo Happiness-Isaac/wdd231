@@ -96,7 +96,7 @@ a {
     padding: 0.4rem 0.8rem;
     font-size: 1.5rem;
     color: var(--white);
-    background: transparent;
+    background: var(--white);
     border: 1px solid var(--white);
     border-radius: 6px;
     cursor: pointer;
@@ -125,7 +125,7 @@ a {
     text-align: center;
     color: var(--white);
     text-decoration: none;
-    border-bottom: 3px solid transparent;
+    border-bottom: 3px solid var(--charcoal);
 }
 
 .nav-list a:hover {
@@ -155,10 +155,12 @@ main {
 
 .hero h1 {
     color: var(--white);
+    animation: slide-in 0.6s ease-out both;
 }
 
 .hero p {
     max-width: 40rem;
+    animation: slide-in 0.6s ease-out 0.15s both;
 }
 
 .how {
@@ -195,7 +197,7 @@ main {
 
 .btn-secondary {
     color: var(--charcoal);
-    background-color: transparent;
+    background-color: var(--white);
     border-color: var(--charcoal);
 }
 
@@ -252,18 +254,18 @@ textarea {
     background: var(--white);
     border: 1px solid var(--line);
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(20, 20, 20, 0.15);
+    box-shadow: 0 2px 8px #14141426;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:focus-within {
-    box-shadow: 0 10px 24px rgba(20, 20, 20, 0.35), 0 14px 18px -8px rgba(229, 9, 20, 0.55);
+    box-shadow: 0 10px 24px #14141459, 0 14px 18px -8px #e509148c;
 }
 
 @media (hover: hover) {
     .card:hover {
         transform: translateY(-6px);
-        box-shadow: 0 14px 28px rgba(20, 20, 20, 0.35), 0 16px 20px -8px rgba(229, 9, 20, 0.55);
+        box-shadow: 0 14px 28px #14141459, 0 16px 20px -8px #e509148c;
     }
 
     .card:hover .poster img {
@@ -373,7 +375,7 @@ dialog {
 }
 
 dialog::backdrop {
-    background: rgba(20, 20, 20, 0.8);
+    background: #141414cc;
 }
 
 .dialog-close {
@@ -382,7 +384,7 @@ dialog::backdrop {
     height: 2.5rem;
     font-size: 1.5rem;
     color: var(--charcoal);
-    background: transparent;
+    background: var(--white);
     border: 1px solid var(--charcoal);
     border-radius: 6px;
     cursor: pointer;
@@ -483,18 +485,8 @@ dialog::backdrop {
     }
 }
 
-.hero h1,
-.hero p,
 .hero .btn {
-    animation: slide-in 0.6s ease-out both;
-}
-
-.hero p {
-    animation-delay: 0.15s;
-}
-
-.hero .btn {
-    animation-delay: 0.3s;
+    animation: slide-in 0.6s ease-out 0.3s both;
 }
 
 .grid.animate .card {
