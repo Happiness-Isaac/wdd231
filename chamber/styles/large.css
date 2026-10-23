@@ -165,8 +165,10 @@
         scroll-behavior: auto;
     }
 
-    * {
-        animation-duration: 0.01ms !important;
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
         transition-duration: 0.01ms !important;
     }
 

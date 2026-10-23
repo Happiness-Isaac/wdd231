@@ -1342,3 +1342,416 @@ body.dark-mode .site-footer {
     color: var(--clr-primary-dark);
     transform: translateY(-3px);
 }
+
+/* animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(1.12);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes growBar {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes goldShimmer {
+    from {
+        background-position: 0% 0;
+    }
+
+    to {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes pulseRing {
+    0% {
+        box-shadow: 0 0 0 0 rgba(224, 166, 63, 0.55);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(224, 166, 63, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(224, 166, 63, 0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* header and hero */
+.site-header {
+    animation: fadeDown 0.6s ease backwards;
+}
+
+.hero-image {
+    animation: zoomOut 1.6s ease-out backwards;
+}
+
+.hero-cta {
+    animation: slideInLeft 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s backwards;
+}
+
+.hero-cta .cta-link {
+    animation: pulseRing 2.4s ease-out 1.5s infinite;
+}
+
+/* page intros */
+.directory-intro,
+.join-intro,
+.discover-intro {
+    animation: fadeUp 0.7s ease 0.15s backwards;
+}
+
+/* section heading accent bar */
+.section-heading h2::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 3px;
+    margin-top: 0.4rem;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--clr-secondary), var(--clr-gold-bright), var(--clr-secondary));
+    background-size: 200% 100%;
+    transform-origin: left;
+    animation: growBar 0.8s ease 0.3s backwards, goldShimmer 3s linear infinite;
+}
+
+/* visit banner */
+.visit-banner {
+    animation: fadeDown 0.7s ease 0.2s backwards;
+}
+
+.visit-icon {
+    animation: pulseRing 2.4s ease-out infinite;
+}
+
+/* home */
+.event-card {
+    animation: slideInLeft 0.7s ease backwards;
+}
+
+.event-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.event-card:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.event-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.event-card:nth-child(n+4) {
+    animation-delay: 0.55s;
+}
+
+.event-date {
+    animation: popIn 0.6s ease 0.4s backwards;
+}
+
+.weather-card {
+    animation: fadeUp 0.7s ease 0.2s backwards;
+}
+
+.weather-icon {
+    animation: float 3.5s ease-in-out infinite;
+}
+
+.forecast-day {
+    animation: fadeUp 0.6s ease backwards;
+}
+
+.forecast-day:nth-child(1) {
+    animation-delay: 0.4s;
+}
+
+.forecast-day:nth-child(2) {
+    animation-delay: 0.55s;
+}
+
+.forecast-day:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+.spotlight-card {
+    animation: fadeUp 0.7s ease backwards;
+}
+
+.spotlight-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.spotlight-card:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.spotlight-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.spotlight-card:nth-child(n+4) {
+    animation-delay: 0.55s;
+}
+
+/* directory */
+.directory-controls {
+    animation: fadeUp 0.6s ease 0.25s backwards;
+}
+
+.member-card {
+    animation: fadeUp 0.7s ease backwards;
+}
+
+.member-card:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.member-card:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.member-card:nth-child(3) {
+    animation-delay: 0.25s;
+}
+
+.member-card:nth-child(4) {
+    animation-delay: 0.35s;
+}
+
+.member-card:nth-child(5) {
+    animation-delay: 0.45s;
+}
+
+.member-card:nth-child(6) {
+    animation-delay: 0.55s;
+}
+
+.member-card:nth-child(n+7) {
+    animation-delay: 0.65s;
+}
+
+.badge {
+    animation: popIn 0.5s ease 0.5s backwards;
+}
+
+/* join and thank you */
+#joinForm {
+    animation: fadeUp 0.8s ease 0.2s backwards;
+}
+
+#joinForm fieldset:nth-of-type(2) {
+    animation: fadeUp 0.7s ease 0.45s backwards;
+}
+
+.thankyou-summary {
+    animation: popIn 0.7s ease 0.15s backwards;
+}
+
+.membership-modal[open] {
+    animation: popIn 0.4s ease;
+}
+
+.membership-modal[open]::backdrop {
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* discover */
+.area-facts {
+    animation: fadeUp 0.7s ease 0.2s backwards;
+}
+
+.area-facts li {
+    animation: slideInLeft 0.6s ease backwards;
+}
+
+.area-facts li:nth-child(1) {
+    animation-delay: 0.35s;
+}
+
+.area-facts li:nth-child(2) {
+    animation-delay: 0.45s;
+}
+
+.area-facts li:nth-child(3) {
+    animation-delay: 0.55s;
+}
+
+.area-facts li:nth-child(n+4) {
+    animation-delay: 0.65s;
+}
+
+.discover-card {
+    animation: fadeUp 0.7s ease backwards;
+}
+
+.discover-card-1 {
+    animation-delay: 0.1s;
+}
+
+.discover-card-2 {
+    animation-delay: 0.2s;
+}
+
+.discover-card-3 {
+    animation-delay: 0.3s;
+}
+
+.discover-card-4 {
+    animation-delay: 0.4s;
+}
+
+.discover-card-5 {
+    animation-delay: 0.5s;
+}
+
+.discover-card-6 {
+    animation-delay: 0.6s;
+}
+
+.discover-card-7 {
+    animation-delay: 0.7s;
+}
+
+.discover-card-8 {
+    animation-delay: 0.8s;
+}
+
+/* footer */
+.footer-bar>* {
+    animation: fadeUp 0.7s ease backwards;
+}
+
+.footer-social a {
+    animation: popIn 0.5s ease backwards;
+}
+
+.footer-social a:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.footer-social a:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.footer-social a:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.footer-social a:nth-child(n+4) {
+    animation-delay: 0.4s;
+}
+
+/* reveal on scroll where supported */
+@supports (animation-timeline: view()) {
+
+    .member-card,
+    .member-card:nth-child(n),
+    .spotlight-card,
+    .spotlight-card:nth-child(n),
+    .event-card,
+    .event-card:nth-child(n),
+    .discover-card,
+    .discover-card-1,
+    .discover-card-2,
+    .discover-card-3,
+    .discover-card-4,
+    .discover-card-5,
+    .discover-card-6,
+    .discover-card-7,
+    .discover-card-8,
+    .area-facts,
+    .footer-bar>* {
+        animation-name: fadeUp;
+        animation-delay: 0s;
+        animation-timing-function: linear;
+        animation-fill-mode: backwards;
+        animation-timeline: view();
+        animation-range: entry 0% entry 40%;
+    }
+}
