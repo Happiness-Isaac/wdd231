@@ -1,3 +1,27 @@
+/* discover gallery: medium screens (641px - 1024px) */
+@media (min-width: 641px) {
+    .discover-gallery {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        grid-template-areas:
+            "card1 card2"
+            "card3 card3"
+            "card4 card5"
+            "card6 card7"
+            "card8 card8";
+    }
+
+    .discover-card img {
+        transition: transform 0.35s ease, filter 0.35s ease;
+    }
+
+    .discover-card:hover img,
+    .discover-card:focus-within img {
+        transform: scale(1.05);
+        filter: brightness(1.06);
+    }
+}
+
 @media screen and (min-width: 768px) {
 
     /* header / nav */
@@ -10,7 +34,7 @@
     }
 
     .brand-text {
-        font-size: 1.1rem;
+        font-size: 0.8rem;
         top: 25px;
     }
 
@@ -33,9 +57,10 @@
         padding: 0.85rem 1rem;
     }
 
-    /* hero*/
+    /* hero */
     .hero {
         min-height: 360px;
+        margin-top: -2.5rem;
     }
 
     .hero-image {
@@ -44,16 +69,12 @@
     }
 
     .hero-cta {
-        inset: auto auto 1.5rem 1.5rem
+        inset: auto auto 1.5rem 1.5rem;
     }
 
-    /*main*/
+    /* main */
     main {
         padding: 2.5rem 1.5rem 4rem;
-    }
-
-    .hero {
-        margin-top: -2.5rem;
     }
 
     #member-list {
@@ -74,8 +95,11 @@
         gap: 1.5rem;
     }
 
-    /*footer */
+    .join-layout {
+        gap: 1.5rem;
+    }
 
+    /* footer */
     .footer-bar {
         flex-direction: row;
         align-items: center;
@@ -99,6 +123,21 @@
     }
 }
 
+@media (min-width: 800px) {
+    .join-layout {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    #joinForm {
+        flex: 1.4;
+    }
+
+    .membership-cards {
+        flex: 1;
+    }
+}
+
 @media screen and (min-width: 980px) {
     #member-list {
         grid-template-columns: repeat(3, 1fr);
@@ -109,7 +148,19 @@
     }
 }
 
-@media screen and (prefers-reduced-motion: reduce) {
+/* gallery: large screens (1025px and above) */
+@media (min-width: 1025px) {
+    .discover-gallery {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "card1 card1 card2 card3"
+            "card4 card5 card5 card3"
+            "card4 card6 card7 card7"
+            "card8 card8 card8 card8";
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
     }
@@ -117,5 +168,11 @@
     * {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
+    }
+
+    .membership-card {
+        animation: none;
+        opacity: 1;
+        transform: none;
     }
 }
